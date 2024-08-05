@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A1BB2D3145E1C4688716198 /* Pods_RecetasApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F47A5A247E994EB3D4D1D283 /* Pods_RecetasApp.framework */; };
+		A3B6055B20833CDD119460A9 /* Pods_RecetasAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E7EE6E2BBD3749615959C2C /* Pods_RecetasAppTests.framework */; };
+		D20115B85B470BDFCB3B3655 /* Pods_RecetasApp_RecetasAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71A7DF4A5027781B2623BF0A /* Pods_RecetasApp_RecetasAppUITests.framework */; };
+		FA13D81C2C6158C500EE623D /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA13D81B2C6158C500EE623D /* HomeScreenView.swift */; };
 		FA7D5BE92C5EA05A00D20E45 /* RecetasAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7D5BE82C5EA05A00D20E45 /* RecetasAppApp.swift */; };
-		FA7D5BEB2C5EA05A00D20E45 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7D5BEA2C5EA05A00D20E45 /* ContentView.swift */; };
 		FA7D5BED2C5EA05B00D20E45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA7D5BEC2C5EA05B00D20E45 /* Assets.xcassets */; };
 		FA7D5BF02C5EA05B00D20E45 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA7D5BEF2C5EA05B00D20E45 /* Preview Assets.xcassets */; };
 		FA7D5BFA2C5EA05C00D20E45 /* RecetasAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7D5BF92C5EA05C00D20E45 /* RecetasAppTests.swift */; };
@@ -34,9 +37,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		71A7DF4A5027781B2623BF0A /* Pods_RecetasApp_RecetasAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecetasApp_RecetasAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		73CB1A279159D0CC1B1B9616 /* Pods-RecetasApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecetasApp.release.xcconfig"; path = "Target Support Files/Pods-RecetasApp/Pods-RecetasApp.release.xcconfig"; sourceTree = "<group>"; };
+		8E7EE6E2BBD3749615959C2C /* Pods_RecetasAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecetasAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2B52D18F39FEB9DD7F1F15E /* Pods-RecetasApp-RecetasAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecetasApp-RecetasAppUITests.release.xcconfig"; path = "Target Support Files/Pods-RecetasApp-RecetasAppUITests/Pods-RecetasApp-RecetasAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		ACEEFCBDFF82C7D7B212ECC8 /* Pods-RecetasApp-RecetasAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecetasApp-RecetasAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-RecetasApp-RecetasAppUITests/Pods-RecetasApp-RecetasAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		F1DCB9C84460B3A571D2FCE1 /* Pods-RecetasApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecetasApp.debug.xcconfig"; path = "Target Support Files/Pods-RecetasApp/Pods-RecetasApp.debug.xcconfig"; sourceTree = "<group>"; };
+		F47A5A247E994EB3D4D1D283 /* Pods_RecetasApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecetasApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA13D81B2C6158C500EE623D /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
 		FA7D5BE52C5EA05A00D20E45 /* RecetasApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecetasApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA7D5BE82C5EA05A00D20E45 /* RecetasAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecetasAppApp.swift; sourceTree = "<group>"; };
-		FA7D5BEA2C5EA05A00D20E45 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FA7D5BEC2C5EA05B00D20E45 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA7D5BEF2C5EA05B00D20E45 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FA7D5BF52C5EA05C00D20E45 /* RecetasAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecetasAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +54,8 @@
 		FA7D5BFF2C5EA05C00D20E45 /* RecetasAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecetasAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA7D5C032C5EA05C00D20E45 /* RecetasAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecetasAppUITests.swift; sourceTree = "<group>"; };
 		FA7D5C052C5EA05C00D20E45 /* RecetasAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecetasAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FB3EE01046F82A0974706C2B /* Pods-RecetasAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecetasAppTests.release.xcconfig"; path = "Target Support Files/Pods-RecetasAppTests/Pods-RecetasAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		FE2A54BBE62DD8D5500DB41A /* Pods-RecetasAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecetasAppTests.debug.xcconfig"; path = "Target Support Files/Pods-RecetasAppTests/Pods-RecetasAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A1BB2D3145E1C4688716198 /* Pods_RecetasApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3B6055B20833CDD119460A9 /* Pods_RecetasAppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,12 +79,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D20115B85B470BDFCB3B3655 /* Pods_RecetasApp_RecetasAppUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F00F8B886637EA3D5CDBBDE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F1DCB9C84460B3A571D2FCE1 /* Pods-RecetasApp.debug.xcconfig */,
+				73CB1A279159D0CC1B1B9616 /* Pods-RecetasApp.release.xcconfig */,
+				ACEEFCBDFF82C7D7B212ECC8 /* Pods-RecetasApp-RecetasAppUITests.debug.xcconfig */,
+				A2B52D18F39FEB9DD7F1F15E /* Pods-RecetasApp-RecetasAppUITests.release.xcconfig */,
+				FE2A54BBE62DD8D5500DB41A /* Pods-RecetasAppTests.debug.xcconfig */,
+				FB3EE01046F82A0974706C2B /* Pods-RecetasAppTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		B4A22A78AB05130B2545DE81 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F47A5A247E994EB3D4D1D283 /* Pods_RecetasApp.framework */,
+				71A7DF4A5027781B2623BF0A /* Pods_RecetasApp_RecetasAppUITests.framework */,
+				8E7EE6E2BBD3749615959C2C /* Pods_RecetasAppTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FA7D5BDC2C5EA05A00D20E45 = {
 			isa = PBXGroup;
 			children = (
@@ -78,6 +116,8 @@
 				FA7D5BF82C5EA05C00D20E45 /* RecetasAppTests */,
 				FA7D5C022C5EA05C00D20E45 /* RecetasAppUITests */,
 				FA7D5BE62C5EA05A00D20E45 /* Products */,
+				0F00F8B886637EA3D5CDBBDE /* Pods */,
+				B4A22A78AB05130B2545DE81 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -95,7 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				FA7D5BE82C5EA05A00D20E45 /* RecetasAppApp.swift */,
-				FA7D5BEA2C5EA05A00D20E45 /* ContentView.swift */,
+				FA13D81B2C6158C500EE623D /* HomeScreenView.swift */,
 				FA7D5BEC2C5EA05B00D20E45 /* Assets.xcassets */,
 				FA7D5BEE2C5EA05B00D20E45 /* Preview Content */,
 			);
@@ -134,6 +174,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FA7D5C092C5EA05C00D20E45 /* Build configuration list for PBXNativeTarget "RecetasApp" */;
 			buildPhases = (
+				F06CC4A8670BB3EDD115F5AB /* [CP] Check Pods Manifest.lock */,
 				FA7D5BE12C5EA05A00D20E45 /* Sources */,
 				FA7D5BE22C5EA05A00D20E45 /* Frameworks */,
 				FA7D5BE32C5EA05A00D20E45 /* Resources */,
@@ -151,6 +192,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FA7D5C0C2C5EA05C00D20E45 /* Build configuration list for PBXNativeTarget "RecetasAppTests" */;
 			buildPhases = (
+				A44B5C53E60EA44E96F73AA3 /* [CP] Check Pods Manifest.lock */,
 				FA7D5BF12C5EA05C00D20E45 /* Sources */,
 				FA7D5BF22C5EA05C00D20E45 /* Frameworks */,
 				FA7D5BF32C5EA05C00D20E45 /* Resources */,
@@ -169,6 +211,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FA7D5C0F2C5EA05C00D20E45 /* Build configuration list for PBXNativeTarget "RecetasAppUITests" */;
 			buildPhases = (
+				3DB9BA57183AD78CD5E48A3E /* [CP] Check Pods Manifest.lock */,
 				FA7D5BFB2C5EA05C00D20E45 /* Sources */,
 				FA7D5BFC2C5EA05C00D20E45 /* Frameworks */,
 				FA7D5BFD2C5EA05C00D20E45 /* Resources */,
@@ -252,12 +295,81 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3DB9BA57183AD78CD5E48A3E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RecetasApp-RecetasAppUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A44B5C53E60EA44E96F73AA3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RecetasAppTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F06CC4A8670BB3EDD115F5AB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RecetasApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FA7D5BE12C5EA05A00D20E45 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA7D5BEB2C5EA05A00D20E45 /* ContentView.swift in Sources */,
+				FA13D81C2C6158C500EE623D /* HomeScreenView.swift in Sources */,
 				FA7D5BE92C5EA05A00D20E45 /* RecetasAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -347,7 +459,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -404,7 +516,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -416,9 +528,11 @@
 		};
 		FA7D5C0A2C5EA05C00D20E45 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F1DCB9C84460B3A571D2FCE1 /* Pods-RecetasApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RecetasApp/Preview Content\"";
@@ -428,8 +542,9 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UILaunchStoryboardName = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -437,17 +552,22 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ronaldoswift.RecetasApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		FA7D5C0B2C5EA05C00D20E45 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 73CB1A279159D0CC1B1B9616 /* Pods-RecetasApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RecetasApp/Preview Content\"";
@@ -457,8 +577,9 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UILaunchStoryboardName = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -466,14 +587,18 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ronaldoswift.RecetasApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 		FA7D5C0D2C5EA05C00D20E45 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE2A54BBE62DD8D5500DB41A /* Pods-RecetasAppTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -481,19 +606,23 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = H9JXH336V5;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ronaldoswift.RecetasAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RecetasApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/RecetasApp";
 			};
 			name = Debug;
 		};
 		FA7D5C0E2C5EA05C00D20E45 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FB3EE01046F82A0974706C2B /* Pods-RecetasAppTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -501,19 +630,23 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = H9JXH336V5;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ronaldoswift.RecetasAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RecetasApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/RecetasApp";
 			};
 			name = Release;
 		};
 		FA7D5C102C5EA05C00D20E45 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ACEEFCBDFF82C7D7B212ECC8 /* Pods-RecetasApp-RecetasAppUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -523,15 +656,19 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ronaldoswift.RecetasAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_TARGET_NAME = RecetasApp;
 			};
 			name = Debug;
 		};
 		FA7D5C112C5EA05C00D20E45 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A2B52D18F39FEB9DD7F1F15E /* Pods-RecetasApp-RecetasAppUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -541,9 +678,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ronaldoswift.RecetasAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_TARGET_NAME = RecetasApp;
 			};
 			name = Release;
