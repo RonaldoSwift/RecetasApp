@@ -11,5 +11,4 @@ struct Receta {
     var id: Int
     var title: String
     var image: String
-    var imageType: String
 }

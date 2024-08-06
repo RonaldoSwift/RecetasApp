@@ -9,9 +9,11 @@ import Foundation
 import Combine
 
 class RecetasWebService {
+     //Llamar desde otro lugar info.plist por ejemplo
+    private let API_KEY: String = "faea268df94a44d4b75e8a46ee06f2fc"
     
     func getReceta(nombreDeReceta:String) -> AnyPublisher<RecetaResponse,Error> {
-        guard let urlComponents = URLComponents(string: "https://api.spoonacular.com/recipes/complexSearch?apiKey=faea268df94a44d4b75e8a46ee06f2fc&query=\(nombreDeReceta)") else {
+        guard let urlComponents = URLComponents(string: "https://api.spoonacular.com/recipes/complexSearch?apiKey=\(API_KEY)&query=\(nombreDeReceta)") else {
             return Fail(error: RecetasAppError.errorURL)
                 .eraseToAnyPublisher()
         }
