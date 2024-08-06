@@ -11,6 +11,11 @@
 		A3B6055B20833CDD119460A9 /* Pods_RecetasAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E7EE6E2BBD3749615959C2C /* Pods_RecetasAppTests.framework */; };
 		D20115B85B470BDFCB3B3655 /* Pods_RecetasApp_RecetasAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71A7DF4A5027781B2623BF0A /* Pods_RecetasApp_RecetasAppUITests.framework */; };
 		FA13D81C2C6158C500EE623D /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA13D81B2C6158C500EE623D /* HomeScreenView.swift */; };
+		FA6483E22C6196A0001C4722 /* RecetasWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6483E12C6196A0001C4722 /* RecetasWebService.swift */; };
+		FA6483E72C619853001C4722 /* RecetaResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6483E62C619853001C4722 /* RecetaResponse.swift */; };
+		FA6483E92C619CC0001C4722 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6483E82C619CC0001C4722 /* ErrorResponse.swift */; };
+		FA6483EE2C619E61001C4722 /* RecetaRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6483ED2C619E61001C4722 /* RecetaRepository.swift */; };
+		FA6483F02C619F6B001C4722 /* Receta.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6483EF2C619F6B001C4722 /* Receta.swift */; };
 		FA7D5BE92C5EA05A00D20E45 /* RecetasAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7D5BE82C5EA05A00D20E45 /* RecetasAppApp.swift */; };
 		FA7D5BED2C5EA05B00D20E45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA7D5BEC2C5EA05B00D20E45 /* Assets.xcassets */; };
 		FA7D5BF02C5EA05B00D20E45 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA7D5BEF2C5EA05B00D20E45 /* Preview Assets.xcassets */; };
@@ -45,6 +50,11 @@
 		F1DCB9C84460B3A571D2FCE1 /* Pods-RecetasApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecetasApp.debug.xcconfig"; path = "Target Support Files/Pods-RecetasApp/Pods-RecetasApp.debug.xcconfig"; sourceTree = "<group>"; };
 		F47A5A247E994EB3D4D1D283 /* Pods_RecetasApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecetasApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA13D81B2C6158C500EE623D /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
+		FA6483E12C6196A0001C4722 /* RecetasWebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecetasWebService.swift; sourceTree = "<group>"; };
+		FA6483E62C619853001C4722 /* RecetaResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecetaResponse.swift; sourceTree = "<group>"; };
+		FA6483E82C619CC0001C4722 /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
+		FA6483ED2C619E61001C4722 /* RecetaRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecetaRepository.swift; sourceTree = "<group>"; };
+		FA6483EF2C619F6B001C4722 /* Receta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Receta.swift; sourceTree = "<group>"; };
 		FA7D5BE52C5EA05A00D20E45 /* RecetasApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecetasApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA7D5BE82C5EA05A00D20E45 /* RecetasAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecetasAppApp.swift; sourceTree = "<group>"; };
 		FA7D5BEC2C5EA05B00D20E45 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -109,6 +119,81 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		FA6483DE2C6193C7001C4722 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				FA7D5BE82C5EA05A00D20E45 /* RecetasAppApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		FA6483DF2C6193D0001C4722 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				FA13D81B2C6158C500EE623D /* HomeScreenView.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		FA6483E02C619664001C4722 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				FA6483E42C61976C001C4722 /* Modelo */,
+				FA6483E32C6196F5001C4722 /* RecetasAppWebService */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		FA6483E32C6196F5001C4722 /* RecetasAppWebService */ = {
+			isa = PBXGroup;
+			children = (
+				FA6483E12C6196A0001C4722 /* RecetasWebService.swift */,
+				FA6483E82C619CC0001C4722 /* ErrorResponse.swift */,
+			);
+			path = RecetasAppWebService;
+			sourceTree = "<group>";
+		};
+		FA6483E42C61976C001C4722 /* Modelo */ = {
+			isa = PBXGroup;
+			children = (
+				FA6483E52C619773001C4722 /* Response */,
+			);
+			path = Modelo;
+			sourceTree = "<group>";
+		};
+		FA6483E52C619773001C4722 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				FA6483E62C619853001C4722 /* RecetaResponse.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		FA6483EA2C619D99001C4722 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				FA6483EB2C619DB3001C4722 /* Repository */,
+				FA6483EC2C619E3F001C4722 /* Modelo */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		FA6483EB2C619DB3001C4722 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				FA6483ED2C619E61001C4722 /* RecetaRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		FA6483EC2C619E3F001C4722 /* Modelo */ = {
+			isa = PBXGroup;
+			children = (
+				FA6483EF2C619F6B001C4722 /* Receta.swift */,
+			);
+			path = Modelo;
+			sourceTree = "<group>";
+		};
 		FA7D5BDC2C5EA05A00D20E45 = {
 			isa = PBXGroup;
 			children = (
@@ -134,8 +219,10 @@
 		FA7D5BE72C5EA05A00D20E45 /* RecetasApp */ = {
 			isa = PBXGroup;
 			children = (
-				FA7D5BE82C5EA05A00D20E45 /* RecetasAppApp.swift */,
-				FA13D81B2C6158C500EE623D /* HomeScreenView.swift */,
+				FA6483DE2C6193C7001C4722 /* App */,
+				FA6483DF2C6193D0001C4722 /* Presentation */,
+				FA6483EA2C619D99001C4722 /* Domain */,
+				FA6483E02C619664001C4722 /* Data */,
 				FA7D5BEC2C5EA05B00D20E45 /* Assets.xcassets */,
 				FA7D5BEE2C5EA05B00D20E45 /* Preview Content */,
 			);
@@ -369,7 +456,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA6483F02C619F6B001C4722 /* Receta.swift in Sources */,
+				FA6483E92C619CC0001C4722 /* ErrorResponse.swift in Sources */,
+				FA6483EE2C619E61001C4722 /* RecetaRepository.swift in Sources */,
 				FA13D81C2C6158C500EE623D /* HomeScreenView.swift in Sources */,
+				FA6483E22C6196A0001C4722 /* RecetasWebService.swift in Sources */,
+				FA6483E72C619853001C4722 /* RecetaResponse.swift in Sources */,
 				FA7D5BE92C5EA05A00D20E45 /* RecetasAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

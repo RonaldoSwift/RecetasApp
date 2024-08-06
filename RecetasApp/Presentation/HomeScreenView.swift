@@ -8,8 +8,17 @@
 import SwiftUI
 
 struct HomeScreenView: View {
+    
     var body: some View {
-        Text("Home Screen")
+        VStack {
+            Text("Lista")
+            
+            List {
+                Text("hola")
+                
+            }
+            
+        }
     }
 }
 
