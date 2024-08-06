@@ -14,6 +14,10 @@ struct HomeScreenView: View {
             recetasWebService: RecetasWebService()
         )
     )
+    
+    @State private var buscarReceta: String = ""
+    @State private var arrayDeReceta: [Receta] = []
+    
     @State private var titulo: String = ""
     @State private var showAlert: Bool = false
     @State private var showLoading: Bool = false
@@ -21,17 +25,31 @@ struct HomeScreenView: View {
     
     var body: some View {
         VStack {
-            Text("Lista")
-            
-            List {
-                Text(titulo)
+            ZStack {
+                HStack {
+                    Image(systemName: "magnifyingglass")
+                        .foregroundColor(.gray)
+                        .padding(.leading, 10)
+
+                    TextField("Buscar...", text: $buscarReceta)
+                        .padding(.leading, 5)
+                }
+                .padding()
+                .overlay(RoundedRectangle(cornerRadius: 10.0).strokeBorder(Color.black, style: StrokeStyle(lineWidth: 1.0)))
             }
+            .padding()
             
-            Button(action: {
-                homeScreenViewModel.startReceta(nombreDeReceta: "")
-            }, label: {
-                Text("Button")
-            })
+            ScrollView {
+                LazyVStack {
+                    ForEach(arrayDeReceta, id: \.id) { receta in
+                        RecetaCard(
+                            clickEnLaTarjeta: {},
+                            urlImage: receta.image,
+                            nombreDeComida: receta.title
+                        )
+                    }
+                }
+            }
         }
         .alert(isPresented: $showAlert) {
             Alert(
@@ -54,8 +72,8 @@ struct HomeScreenView: View {
                 showAlert = true
                 showLoading = false
                 mensajeDeAlerta = error
-            case .success(let primeraComida):
-                titulo = primeraComida
+            case .success(let recetas):
+                arrayDeReceta = recetas
                 showLoading = false
             }
         })

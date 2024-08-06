@@ -11,5 +11,5 @@ enum HomeScreenUiState {
     case inicial
     case cargando
     case error(String)
-    case success(String)
+    case success([Receta])
 }

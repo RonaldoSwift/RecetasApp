@@ -19,6 +19,7 @@ final class HomeScreenViewModel: ObservableObject {
 
     init(recetaRepository: RecetaRepository) {
         self.recetaRepository = recetaRepository
+        startReceta(nombreDeReceta: "")
     }
     
     func startReceta(nombreDeReceta: String) {
@@ -37,8 +38,7 @@ final class HomeScreenViewModel: ObservableObject {
                 self.homeScreenUiState = HomeScreenUiState.error("Ocurrio un Error \(error)")
             }
         }, receiveValue: { (recetas: [Receta]) in
-            let primeraComida = recetas[0]
-            self.homeScreenUiState = HomeScreenUiState.success("\(primeraComida)")
+            self.homeScreenUiState = HomeScreenUiState.success(recetas)
         })
         .store(in: &cancelLables)
         
