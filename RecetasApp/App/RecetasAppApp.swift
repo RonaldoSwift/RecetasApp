@@ -9,9 +9,18 @@ import SwiftUI
 
 @main
 struct RecetasAppApp: App {
+    
+    @StateObject private var appRootManager = AppRootManager()
+    
     var body: some Scene {
         WindowGroup {
-            HomeScreenView()
+            Group {
+                switch appRootManager.currentRoot {
+                case .principal:
+                    PrincipalRootView()
+                }
+            }
+            .environmentObject(appRootManager)
         }
     }
 }

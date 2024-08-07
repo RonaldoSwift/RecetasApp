@@ -9,15 +9,17 @@ import SwiftUI
 
 struct HomeScreenView: View {
     
+    var onClickInDetail: () -> Void
+    
     @StateObject private var homeScreenViewModel = HomeScreenViewModel(
         recetaRepository: RecetaRepository(
             recetasWebService: RecetasWebService()
         )
     )
     
-    @State private var buscarReceta: String = ""
+    @State private var nombreDeReceta: String = ""
     @State private var arrayDeReceta: [Receta] = []
-    
+
     @State private var titulo: String = ""
     @State private var showAlert: Bool = false
     @State private var showLoading: Bool = false
@@ -31,7 +33,7 @@ struct HomeScreenView: View {
                         .foregroundColor(.gray)
                         .padding(.leading, 10)
 
-                    TextField("Buscar...", text: $buscarReceta)
+                    TextField("Buscar...", text: $nombreDeReceta)
                         .padding(.leading, 5)
                 }
                 .padding()
@@ -43,7 +45,9 @@ struct HomeScreenView: View {
                 LazyVStack {
                     ForEach(arrayDeReceta, id: \.id) { receta in
                         RecetaCard(
-                            clickEnLaTarjeta: {},
+                            clickEnLaTarjeta: {
+                                onClickInDetail()
+                            },
                             urlImage: receta.image,
                             nombreDeComida: receta.title
                         )
@@ -56,7 +60,7 @@ struct HomeScreenView: View {
                 title: Text("Error"),
                 message: Text(mensajeDeAlerta),
                 dismissButton: .default(
-                    Text("Error"),
+                    Text("Aceptar"),
                     action: {
                     }
                 )
@@ -81,5 +85,5 @@ struct HomeScreenView: View {
 }
 
 #Preview {
-    HomeScreenView()
+    HomeScreenView(onClickInDetail: {})
 }
