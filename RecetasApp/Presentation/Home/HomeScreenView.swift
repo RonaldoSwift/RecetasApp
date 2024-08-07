@@ -19,7 +19,18 @@ struct HomeScreenView: View {
     
     @State private var nombreDeReceta: String = ""
     @State private var arrayDeReceta: [Receta] = []
-
+    @State private var searchText = ""
+    
+    var resultadosBusquedaDeReceta: [Receta] {
+        if searchText.isEmpty {
+            return arrayDeReceta
+        } else {
+            return arrayDeReceta.filter { (receta: Receta) in
+                receta.title.lowercased().contains(searchText.lowercased())
+            }
+        }
+    }
+    
     @State private var titulo: String = ""
     @State private var showAlert: Bool = false
     @State private var showLoading: Bool = false
@@ -27,34 +38,28 @@ struct HomeScreenView: View {
     
     var body: some View {
         VStack {
-            ZStack {
-                HStack {
-                    Image(systemName: "magnifyingglass")
-                        .foregroundColor(.gray)
-                        .padding(.leading, 10)
-
-                    TextField("Buscar...", text: $nombreDeReceta)
-                        .padding(.leading, 5)
-                }
-                .padding()
-                .overlay(RoundedRectangle(cornerRadius: 10.0).strokeBorder(Color.black, style: StrokeStyle(lineWidth: 1.0)))
-            }
-            .padding()
-            
-            ScrollView {
-                LazyVStack {
-                    ForEach(arrayDeReceta, id: \.id) { receta in
-                        RecetaCard(
-                            clickEnLaTarjeta: {
-                                onClickInDetail()
-                            },
-                            urlImage: receta.image,
-                            nombreDeComida: receta.title
-                        )
+            if showLoading {
+                ProgressView()
+                    .frame(maxWidth: .infinity)
+            } else {
+                ScrollView {
+                    LazyVStack {
+                        ForEach(resultadosBusquedaDeReceta, id: \.id) { receta in
+                            RecetaCard(
+                                clickEnLaTarjeta: {
+                                    onClickInDetail()
+                                },
+                                urlImage: receta.image,
+                                nombreDeComida: receta.title
+                            )
+                        }
                     }
                 }
             }
         }
+        .searchable(text: $searchText) // aumenta la barra de buscar
+        .navigationBarTitleDisplayMode(.inline)
+        .navigationTitle(Text("Home"))
         .alert(isPresented: $showAlert) {
             Alert(
                 title: Text("Error"),

@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 
+// TODO: Mejorar esta navegacion entre pantallas
 struct PrincipalRootView: View {
     
     @State private var isActiveDetailScreen: Bool = false
