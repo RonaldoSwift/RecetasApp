@@ -10,7 +10,7 @@ import Combine
 
 class RecetasWebService {
      //Llamar desde otro lugar info.plist por ejemplo
-    private let API_KEY: String = "3b1513fc749947bda8c22aed3955dd9f"
+    private let API_KEY: String = ""
     
     func getReceta(nombreDeReceta:String) -> AnyPublisher<RecetaResponse,Error> {
         guard let urlComponents = URLComponents(string: "http://192.168.1.39:3000/recipes/complexSearch") else {
@@ -49,7 +49,6 @@ class RecetasWebService {
             .decode(type: RecetaResponse.self, decoder: JSONDecoder())
             .eraseToAnyPublisher()
     }
-    
     
     enum RecetasAppError: Error, Equatable {
         case errorURL

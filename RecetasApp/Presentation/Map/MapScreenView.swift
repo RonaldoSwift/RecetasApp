@@ -14,7 +14,7 @@ struct MapScreenView: View {
             Text("Map")
         }
         .toolbar(content: {
-            TextToolbarContent()
+            TextToolbarContent(tituloDePantalla: "Mapa")
         })
         .navigationBarBackButtonHidden(true)
     }

@@ -21,7 +21,7 @@ struct DetailScreenView: View {
             }
         }
         .toolbar(content: {
-            TextToolbarContent()
+            TextToolbarContent(tituloDePantalla: "Detalle")
         })
         .navigation(MapScreenView(), $irAMap)
         .navigationBarBackButtonHidden(true)

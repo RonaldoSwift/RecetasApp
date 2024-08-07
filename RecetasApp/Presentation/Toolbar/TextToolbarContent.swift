@@ -11,6 +11,7 @@ import SwiftUI
 struct TextToolbarContent: ToolbarContent {
     
     @Environment(\.presentationMode) var presentationMode
+    var tituloDePantalla: String 
     
     var body: some ToolbarContent {
         ToolbarItem(placement: .navigationBarLeading) {
@@ -25,6 +26,9 @@ struct TextToolbarContent: ToolbarContent {
                     .background(Color.red)
                     .cornerRadius(20)
             }
+        }
+        ToolbarItem(placement: .principal) {
+            Text(tituloDePantalla)
         }
     }
 }
