@@ -16,9 +16,6 @@ struct RecetaCard: View {
     var nombreDeComida: String
     
     var body: some View {
-        Button {
-            clickEnLaTarjeta()
-        } label: {
             ZStack {
                 LinearGradient(
                     gradient: Gradient(colors: [Color.white, Color.white]), startPoint: .topLeading, endPoint: .bottomTrailing
@@ -31,8 +28,9 @@ struct RecetaCard: View {
                         .resizable()
                         .scaledToFill()
                         .frame(maxWidth: .infinity, maxHeight: 120)
+                        .clipShape(RoundedCorner(radius: 12, corners: [.topRight, .topLeft]))
                         .clipped()
-                    
+                    Spacer()
                     Text(nombreDeComida)
                         .foregroundColor(Color.black)
                         .font(.system(size: 20, weight: .bold))
@@ -40,9 +38,12 @@ struct RecetaCard: View {
                         .allowsTightening(false)
                         .multilineTextAlignment(.leading)
                         .fixedSize(horizontal: false, vertical: true)
+                    Spacer()
                 }
             }
             .frame(width: 380, height: 200)
-        }
+            .onTapGesture {
+                clickEnLaTarjeta()
+            }
     }
 }
