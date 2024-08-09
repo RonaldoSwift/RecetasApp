@@ -11,6 +11,16 @@ import SwiftUI
 struct RecetasAppApp: App {
     
     @StateObject private var appRootManager = AppRootManager()
+    var sharedRecetaViewModel = SharedRecetaViewModel()
+    
+    init() {
+        let navBarAppearence = UINavigationBarAppearance() // use as global variable, otherwise SwiftUI may cause problems.
+        navBarAppearence.configureWithTransparentBackground()
+        navBarAppearence.titleTextAttributes = [.foregroundColor: UIColor.black]
+        navBarAppearence.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+        UINavigationBar.appearance().standardAppearance = navBarAppearence
+        UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearence
+    }
     
     var body: some Scene {
         WindowGroup {
@@ -18,6 +28,7 @@ struct RecetasAppApp: App {
                 switch appRootManager.currentRoot {
                 case .principal:
                     PrincipalRootView()
+                        .environmentObject(sharedRecetaViewModel)
                 }
             }
             .environmentObject(appRootManager)

@@ -6,9 +6,11 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct DetailScreenView: View {
     
+    @EnvironmentObject private var sharedRecetaViewModel : SharedRecetaViewModel
     @StateObject private var detailScreenViewModel = DetailScreenViewModel(
         detalleRepository: DetalleRepository(
             recetasWebService:
@@ -23,7 +25,7 @@ struct DetailScreenView: View {
     @State private var showLoading: Bool = false
     @State private var showAlert:Bool = false
     @State private var mensajeDeAlerta: String = ""
-    
+        
     var body: some View {
         
         VStack {
@@ -32,29 +34,36 @@ struct DetailScreenView: View {
                     .frame(maxWidth: .infinity)
             } else {
                 VStack {
-                    DetalleCard(
-                        tituloDeReceta: "Holaaaa",
-                        tiempo: cookingMinutes,
-                        calorias: preparationMinutes,
-                        personas: readyInMinutes
-                    )
-                    
-                    HStack {
-                        Text("Instrucciones")
-                            .foregroundColor(Color.black)
-                            .font(.system(size: 20, weight: .bold))
-                            .lineLimit(nil)
-                            .allowsTightening(false)
-                            .multilineTextAlignment(.leading)
-                        Spacer()
-                    }
-                    .padding(.leading,20)
-                    
                     ScrollView {
-                        Text(resumen)
+                        VStack(spacing: 0) { // Espaciado de 0 elimina el espacio entre los elementos
+                            KFImage(URL(string: sharedRecetaViewModel.receta?.image ?? "Error"))
+                                .resizable()
+                                .scaledToFill()
+                                .background(Color.red)
+                                .frame(maxWidth: .infinity, maxHeight: 250)
+                                .clipped()
+                            
+                            DetalleCard(
+                                tituloDeReceta: sharedRecetaViewModel.receta?.title ?? "Error",
+                                tiempo: cookingMinutes,
+                                calorias: preparationMinutes,
+                                personas: readyInMinutes
+                            )
+                            HStack {
+                                Text("Instrucciones")
+                                    .foregroundColor(Color.black)
+                                    .font(.system(size: 20, weight: .bold))
+                                
+                                Spacer()
+                            }
+                            .padding(.leading, 20)
+                            
+                            
+                            Text(resumen)
+                                .padding()
+                        }
+                        .frame(maxHeight: .infinity, alignment: .bottom)
                     }
-                    .padding()
-                    
                     Button {
                         irAMap = true
                     } label: {
@@ -68,7 +77,9 @@ struct DetailScreenView: View {
                     .padding()
                     .frame(maxWidth: .infinity)
                 }
-                .frame(maxHeight: .infinity, alignment: .bottom)
+                //Altura exacta del Stuts Bar
+                .padding(.top,UIApplication.shared.windows.first?.safeAreaInsets.top)
+                .edgesIgnoringSafeArea(.top)
             }
         }
         
@@ -87,6 +98,9 @@ struct DetailScreenView: View {
                     }
                 )
             )
+        })
+        .onAppear(perform: {
+            detailScreenViewModel.startDetalle(id: sharedRecetaViewModel.receta?.id ?? -1)
         })
         .onReceive(detailScreenViewModel.$detailScreenUiState) { detailState in
             switch(detailState) {

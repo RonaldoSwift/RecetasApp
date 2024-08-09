@@ -10,10 +10,10 @@ import Combine
 
 class RecetasWebService {
      //Llamar desde otro lugar info.plist por ejemplo
-    private let API_KEY: String = ""
+    private let API_KEY: String = "Va el APIKEY"
     
     func getReceta(nombreDeReceta:String) -> AnyPublisher<RecetaResponse,Error> {
-        guard let urlComponents = URLComponents(string: "http://192.168.1.39:3000/recipes/complexSearch") else {
+        guard let urlComponents = URLComponents(string: "https://api.spoonacular.com/recipes/complexSearch?apiKey=\(API_KEY)&query=\(nombreDeReceta)") else {
             return Fail(error: RecetasAppError.errorURL)
                 .eraseToAnyPublisher()
         }
@@ -50,8 +50,8 @@ class RecetasWebService {
             .eraseToAnyPublisher()
     }
     
-    func getDetalleReceta() -> AnyPublisher<DetalleResponse,Error> {
-        guard let urlComponents = URLComponents(string: "http://192.168.1.39:3000/recipes/658108/information") else {
+    func getDetalleReceta(id: Int) -> AnyPublisher<DetalleResponse,Error> {
+        guard let urlComponents = URLComponents(string: "https://api.spoonacular.com/recipes/\(id)/information?apiKey=\(API_KEY)") else {
             return Fail(error: RecetasAppError.errorURL)
                 .eraseToAnyPublisher()
         }
