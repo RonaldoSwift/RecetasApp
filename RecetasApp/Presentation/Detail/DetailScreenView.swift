@@ -15,34 +15,63 @@ struct DetailScreenView: View {
                 RecetasWebService()
         )
     )
-    @State private var titulo: String = ""
+    @State private var cookingMinutes: Int = 0
+    @State private var preparationMinutes: Int = 0
+    @State private var readyInMinutes: Int = 0
+    @State private var resumen: String = ""
     @State private var irAMap: Bool = false
     @State private var showLoading: Bool = false
     @State private var showAlert:Bool = false
     @State private var mensajeDeAlerta: String = ""
     
     var body: some View {
+        
         VStack {
             if showLoading {
                 ProgressView()
                     .frame(maxWidth: .infinity)
             } else {
-                Text("Hello, World!")
-                Button {
-                    irAMap = true
-                } label: {
-                    Text("Map")
+                VStack {
+                    DetalleCard(
+                        tituloDeReceta: "Holaaaa",
+                        tiempo: cookingMinutes,
+                        calorias: preparationMinutes,
+                        personas: readyInMinutes
+                    )
+                    
+                    HStack {
+                        Text("Instrucciones")
+                            .foregroundColor(Color.black)
+                            .font(.system(size: 20, weight: .bold))
+                            .lineLimit(nil)
+                            .allowsTightening(false)
+                            .multilineTextAlignment(.leading)
+                        Spacer()
+                    }
+                    .padding(.leading,20)
+                    
+                    ScrollView {
+                        Text(resumen)
+                    }
+                    .padding()
+                    
+                    Button {
+                        irAMap = true
+                    } label: {
+                        Text("Ubicación")
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .foregroundColor(Color.white)
+                            .background(Color.colorMorado)
+                            .cornerRadius(30)
+                    }
+                    .padding()
+                    .frame(maxWidth: .infinity)
                 }
-                
-                Text(titulo)
-                
-                Button {
-                    detailScreenViewModel.startDetalle()
-                } label: {
-                    Text("Push")
-                }
+                .frame(maxHeight: .infinity, alignment: .bottom)
             }
         }
+        
         .toolbar(content: {
             TextToolbarContent(tituloDePantalla: "Detalle")
         })
@@ -70,7 +99,10 @@ struct DetailScreenView: View {
                 showLoading = false
                 mensajeDeAlerta = error
             case .success(let detalle):
-                titulo = "\(detalle)"
+                cookingMinutes = detalle.cookingMinutes
+                preparationMinutes = detalle.preparationMinutes
+                readyInMinutes = detalle.readyInMinutes
+                resumen = detalle.summary
                 showLoading = false
             }
         }

@@ -18,6 +18,7 @@ final class DetailScreenViewModel: ObservableObject {
     
     init(detalleRepository: DetalleRepository) {
         self.detalleRepository = detalleRepository
+        startDetalle()
     }
     
     func startDetalle() {

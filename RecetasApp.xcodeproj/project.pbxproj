@@ -30,6 +30,7 @@
 		FA7D5C042C5EA05C00D20E45 /* RecetasAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7D5C032C5EA05C00D20E45 /* RecetasAppUITests.swift */; };
 		FA7D5C062C5EA05C00D20E45 /* RecetasAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7D5C052C5EA05C00D20E45 /* RecetasAppUITestsLaunchTests.swift */; };
 		FA7EC1592C65340300EF602E /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7EC1582C65340300EF602E /* RoundedCorner.swift */; };
+		FA7EC15D2C653FD400EF602E /* DetalleCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7EC15C2C653FD400EF602E /* DetalleCard.swift */; };
 		FAA271AF2C61B2EF005AC21C /* HomeScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA271AE2C61B2EF005AC21C /* HomeScreenViewModel.swift */; };
 		FAA271B12C61B410005AC21C /* HomeScreenUiState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA271B02C61B410005AC21C /* HomeScreenUiState.swift */; };
 		FAA4E7882C642E77006F5F2A /* DetalleResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA4E7872C642E77006F5F2A /* DetalleResponse.swift */; };
@@ -91,6 +92,7 @@
 		FA7D5C032C5EA05C00D20E45 /* RecetasAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecetasAppUITests.swift; sourceTree = "<group>"; };
 		FA7D5C052C5EA05C00D20E45 /* RecetasAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecetasAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		FA7EC1582C65340300EF602E /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
+		FA7EC15C2C653FD400EF602E /* DetalleCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleCard.swift; sourceTree = "<group>"; };
 		FAA271AE2C61B2EF005AC21C /* HomeScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewModel.swift; sourceTree = "<group>"; };
 		FAA271B02C61B410005AC21C /* HomeScreenUiState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenUiState.swift; sourceTree = "<group>"; };
 		FAA4E7872C642E77006F5F2A /* DetalleResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleResponse.swift; sourceTree = "<group>"; };
@@ -246,6 +248,7 @@
 			children = (
 				FA6E73D32C6275A1000E84EE /* RecetaCard.swift */,
 				FA7EC1582C65340300EF602E /* RoundedCorner.swift */,
+				FA7EC15C2C653FD400EF602E /* DetalleCard.swift */,
 			);
 			path = Componentes;
 			sourceTree = "<group>";
@@ -629,6 +632,7 @@
 				FAA271AF2C61B2EF005AC21C /* HomeScreenViewModel.swift in Sources */,
 				FA7EC1592C65340300EF602E /* RoundedCorner.swift in Sources */,
 				FA6FC8762C62E342003A6726 /* AppRootManager.swift in Sources */,
+				FA7EC15D2C653FD400EF602E /* DetalleCard.swift in Sources */,
 				FA6FC87E2C62E6A9003A6726 /* DetailScreenView.swift in Sources */,
 				FA6483E92C619CC0001C4722 /* ErrorResponse.swift in Sources */,
 				FA6FC8832C62E8C0003A6726 /* TextToolbarContent.swift in Sources */,

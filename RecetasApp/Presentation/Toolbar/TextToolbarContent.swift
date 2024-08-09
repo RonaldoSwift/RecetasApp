@@ -18,12 +18,12 @@ struct TextToolbarContent: ToolbarContent {
             Button {
                 presentationMode.wrappedValue.dismiss()
             } label: {
-                Image(systemName: "arrowshape.left")
+                Image(systemName: "arrow.backward")
                     .resizable()
                     .frame(width: 20, height: 20)
                     .padding()
-                    .foregroundColor(Color.white)
-                    .background(Color.red)
+                    .foregroundColor(Color.black)
+                    .background(Color.colorBack)
                     .cornerRadius(20)
             }
         }
