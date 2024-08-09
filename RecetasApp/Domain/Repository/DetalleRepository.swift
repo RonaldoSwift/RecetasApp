@@ -18,8 +18,8 @@ class DetalleRepository {
         self.recetasWebService = recetasWebService
     }
     
-    func getDetalleFromWebService() -> AnyPublisher<Detalle ,Error> {
-        return recetasWebService.getDetalleReceta().map { (detalleResponse:DetalleResponse) in
+    func getDetalleFromWebService(id: Int) -> AnyPublisher<Detalle ,Error> {
+        return recetasWebService.getDetalleReceta(id: id).map { (detalleResponse:DetalleResponse) in
             Detalle(
                 readyInMinutes: detalleResponse.readyInMinutes ?? 0,
                 cookingMinutes: detalleResponse.cookingMinutes ?? 0,

@@ -20,6 +20,7 @@ struct HomeScreenView: View {
     @State private var nombreDeReceta: String = ""
     @State private var arrayDeReceta: [Receta] = []
     @State private var searchText = ""
+    @EnvironmentObject private var sharedRecetaViewModel : SharedRecetaViewModel
     
     var resultadosBusquedaDeReceta: [Receta] {
         if searchText.isEmpty {
@@ -47,6 +48,7 @@ struct HomeScreenView: View {
                         ForEach(resultadosBusquedaDeReceta, id: \.id) { receta in
                             RecetaCard(
                                 clickEnLaTarjeta: {
+                                    sharedRecetaViewModel.receta = receta
                                     onClickInDetail()
                                 },
                                 urlImage: receta.image,

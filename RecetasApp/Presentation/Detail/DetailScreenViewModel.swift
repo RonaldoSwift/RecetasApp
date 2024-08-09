@@ -18,13 +18,12 @@ final class DetailScreenViewModel: ObservableObject {
     
     init(detalleRepository: DetalleRepository) {
         self.detalleRepository = detalleRepository
-        startDetalle()
     }
     
-    func startDetalle() {
+    func startDetalle(id: Int) {
         detailScreenUiState = DetailScreenUiState.cargando
         
-        detalleRepository.getDetalleFromWebService()
+        detalleRepository.getDetalleFromWebService(id: id)
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { completion in
                 switch(completion) {

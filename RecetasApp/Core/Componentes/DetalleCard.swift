@@ -29,8 +29,9 @@ struct DetalleCard: View {
                     .font(.system(size: 20, weight: .bold))
                     .lineLimit(nil)
                     .allowsTightening(false)
-                    .multilineTextAlignment(.leading)
+                    .multilineTextAlignment(.center)
                     .fixedSize(horizontal: false, vertical: true)
+                    .padding(.bottom,10)
                 HStack(spacing: 20) {
                     
                     propiedades(
@@ -40,7 +41,7 @@ struct DetalleCard: View {
                     )
                     
                     propiedades(
-                        imagenIcono: "flame",
+                        imagenIcono: "flame.fill",
                         textoDeServicio: calorias,
                         textoFijo: "cals"
                     )
@@ -53,7 +54,7 @@ struct DetalleCard: View {
                 }
             }
         }
-        .frame(width: 310, height: 130)
+        .frame(width: 330, height: 130)
     }
     
     func propiedades(imagenIcono: String, textoDeServicio: Int, textoFijo: String) -> some View {
