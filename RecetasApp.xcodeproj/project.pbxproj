@@ -15,6 +15,7 @@
 		FA6483E92C619CC0001C4722 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6483E82C619CC0001C4722 /* ErrorResponse.swift */; };
 		FA6483EE2C619E61001C4722 /* RecetaRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6483ED2C619E61001C4722 /* RecetaRepository.swift */; };
 		FA6483F02C619F6B001C4722 /* Receta.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6483EF2C619F6B001C4722 /* Receta.swift */; };
+		FA6C97522C67CE5500624531 /* RestauranteMarcador.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6C97512C67CE5500624531 /* RestauranteMarcador.swift */; };
 		FA6CDF022C6674AE000FB5DA /* SharedRecetaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6CDF012C6674AE000FB5DA /* SharedRecetaViewModel.swift */; };
 		FA6E73D42C6275A1000E84EE /* RecetaCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E73D32C6275A1000E84EE /* RecetaCard.swift */; };
 		FA6FC8762C62E342003A6726 /* AppRootManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FC8752C62E342003A6726 /* AppRootManager.swift */; };
@@ -75,6 +76,7 @@
 		FA6483E82C619CC0001C4722 /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
 		FA6483ED2C619E61001C4722 /* RecetaRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecetaRepository.swift; sourceTree = "<group>"; };
 		FA6483EF2C619F6B001C4722 /* Receta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Receta.swift; sourceTree = "<group>"; };
+		FA6C97512C67CE5500624531 /* RestauranteMarcador.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestauranteMarcador.swift; sourceTree = "<group>"; };
 		FA6CDF012C6674AE000FB5DA /* SharedRecetaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedRecetaViewModel.swift; sourceTree = "<group>"; };
 		FA6E73D32C6275A1000E84EE /* RecetaCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecetaCard.swift; sourceTree = "<group>"; };
 		FA6FC8752C62E342003A6726 /* AppRootManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootManager.swift; sourceTree = "<group>"; };
@@ -234,6 +236,7 @@
 			children = (
 				FA6483EF2C619F6B001C4722 /* Receta.swift */,
 				FAA4E78B2C643692006F5F2A /* Detalle.swift */,
+				FA6C97512C67CE5500624531 /* RestauranteMarcador.swift */,
 			);
 			path = Modelo;
 			sourceTree = "<group>";
@@ -641,6 +644,7 @@
 				FA6FC8832C62E8C0003A6726 /* TextToolbarContent.swift in Sources */,
 				FA6FC8862C62F1C0003A6726 /* NavigationModifier.swift in Sources */,
 				FAA271B12C61B410005AC21C /* HomeScreenUiState.swift in Sources */,
+				FA6C97522C67CE5500624531 /* RestauranteMarcador.swift in Sources */,
 				FA6FC88B2C630B8F003A6726 /* MapScreenView.swift in Sources */,
 				FA6483EE2C619E61001C4722 /* RecetaRepository.swift in Sources */,
 				FAA4E78E2C643A60006F5F2A /* DetailScreenViewModel.swift in Sources */,

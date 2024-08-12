@@ -10,7 +10,7 @@ import Combine
 
 class RecetasWebService {
      //Llamar desde otro lugar info.plist por ejemplo
-    private let API_KEY: String = "Va el APIKEY"
+    private let API_KEY: String = "e6ec9aa5f9b341ea84907fea9f2fb53c"
     
     func getReceta(nombreDeReceta:String) -> AnyPublisher<RecetaResponse,Error> {
         guard let urlComponents = URLComponents(string: "https://api.spoonacular.com/recipes/complexSearch?apiKey=\(API_KEY)&query=\(nombreDeReceta)") else {
