@@ -1,42 +1,49 @@
-//
-//  MapScreenView.swift
-//  RecetasApp
-//
-//  Created by Ronaldo Andre on 6/08/24.
-//
-
 import SwiftUI
 import MapKit
 
 struct MapScreenView: View {
     
-    @State private var region = MKCoordinateRegion(
-        center: CLLocationCoordinate2D(latitude: -12.0464, longitude: -77.0428),
-        span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+    @StateObject private var mapScreenViewModel = MapScreenViewModel(
+        detalleRestauranteRepository: RestauranteRepository(
+            recetasWebService: RecetasWebService()
+        )
     )
     
-    let marcadores = [RestauranteMarcador(coordenadas: CLLocationCoordinate2D(latitude: -12.0464, longitude: -77.0428), titulo: "Gusto"),
-                      RestauranteMarcador(coordenadas: CLLocationCoordinate2D(latitude: -12.0480, longitude: -77.0480), titulo: "Dulce")
-    ]
+    @State private var region = MKCoordinateRegion(
+        center: CLLocationCoordinate2D(latitude: 37.7749, longitude: -122.4194), // Coordenadas aproximadas del centro de América del Norte
+        span: MKCoordinateSpan(latitudeDelta: 0.07, longitudeDelta: 0.07) // Ajuste del zoom para cubrir América del Norte
+    )
+    
+    @State private var restaurantesArray : [Restaurante] = []
+    @State private var showAlert: Bool = false
+    @State private var showLoading: Bool = false
+    @State private var mensajeDeAlerta: String = ""
+    @State private var showModal: Bool = false
     
     var body: some View {
-        VStack {
-            Map(coordinateRegion: $region, annotationItems: marcadores) { marcador in
-                MapAnnotation(coordinate: marcador.coordenadas) {
-                    Button {
-                        print("Mapa")
-                    } label: {
-                        VStack {
-                            Image(systemName: "mappin.circle.fill")
-                                .resizable()
-                                .frame(width: 30, height: 30)
-                                .foregroundColor(.red)
-                            Text(marcador.titulo)
-                                .font(.caption)
-                                .background(Color.white)
+        ZStack{
+            VStack {
+                Map(coordinateRegion: $region, annotationItems: restaurantesArray) { restaurante in
+                    MapAnnotation(coordinate: restaurante.coordenadas) {
+                        Button {
+                            showModal = true
+                        } label: {
+                            VStack {
+                                Image(systemName: "house.fill")
+                                    .resizable()
+                                    .frame(width: 30, height: 30)
+                                    .foregroundColor(.blue)
+                                Text(restaurante.name)
+                                    .font(.caption)
+                                    .foregroundColor(Color.black)
+                            }
                         }
                     }
                 }
+            }
+            if showLoading {
+                ProgressView()
+                    .frame(maxWidth: .infinity)
             }
         }
         .toolbar(content: {
@@ -44,6 +51,41 @@ struct MapScreenView: View {
         })
         .navigationBarBackButtonHidden(true)
         .ignoresSafeArea(.all)
+        .alert(isPresented: $showAlert) {
+            Alert(
+                title: Text("Error"),
+                message: Text(mensajeDeAlerta),
+                dismissButton: .default(
+                    Text("Aceptar"),
+                    action: {
+                    }
+                )
+            )
+        }
+        .onReceive(mapScreenViewModel.$mapScreenUiState, perform: { mapaScreenUiState in
+            switch(mapaScreenUiState) {
+            case .inicial:
+                break
+            case .cargando:
+                showLoading = true
+            case .error(let error):
+                showAlert = true
+                showLoading = false
+                mensajeDeAlerta = error
+            case .success(let restaurantes):
+                restaurantesArray = restaurantes
+                showLoading = false
+            }
+        })
+        .sheet(isPresented: $showModal) {
+            MapScreenModalView(
+                mapScreenViewModel: MapScreenViewModel(
+                    detalleRestauranteRepository: RestauranteRepository(
+                        recetasWebService: RecetasWebService()
+                    )
+                )
+            )
+        }
     }
 }
 

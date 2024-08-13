@@ -10,20 +10,20 @@ import Combine
 
 @MainActor
 final class DetailScreenViewModel: ObservableObject {
-    let detalleRepository: DetalleRepository
+    let recetaRepository: RecetaRepository
     
     var cancelLables = Set<AnyCancellable>()
     
     @Published private(set) var detailScreenUiState = DetailScreenUiState.inicial
     
-    init(detalleRepository: DetalleRepository) {
-        self.detalleRepository = detalleRepository
+    init(recetaRepository: RecetaRepository) {
+        self.recetaRepository = recetaRepository
     }
     
     func startDetalle(id: Int) {
         detailScreenUiState = DetailScreenUiState.cargando
         
-        detalleRepository.getDetalleFromWebService(id: id)
+        recetaRepository.getDetalleFromWebService(id: id)
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { completion in
                 switch(completion) {

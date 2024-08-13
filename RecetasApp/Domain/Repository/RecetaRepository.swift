@@ -31,4 +31,17 @@ class RecetaRepository {
             }
             .eraseToAnyPublisher()
     }
+    
+    func getDetalleFromWebService(id: Int) -> AnyPublisher<Detalle ,Error> {
+        return recetasWebService.getDetalleReceta(id: id).map { (detalleResponse:DetalleResponse) in
+            Detalle(
+                readyInMinutes: detalleResponse.readyInMinutes ?? 0,
+                cookingMinutes: detalleResponse.cookingMinutes ?? 0,
+                preparationMinutes:
+                    detalleResponse.preparationMinutes ?? 0,
+                summary: detalleResponse.summary
+            )
+        }
+        .eraseToAnyPublisher()
+    }
 }

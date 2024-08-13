@@ -87,6 +87,43 @@ class RecetasWebService {
             .eraseToAnyPublisher()
     }
     
+    func getRestaurantes() -> AnyPublisher<RestauranteSearchResponse ,Error> {
+        guard let urlComponents = URLComponents(string: "http://192.168.1.39:3000/food/restaurants/search") else {
+            return Fail(error: RecetasAppError.errorURL)
+                .eraseToAnyPublisher()
+        }
+        
+        guard let validUrl = urlComponents.url else {
+            return Fail(error: RecetasAppError.urlInvalido)
+                .eraseToAnyPublisher()
+        }
+        
+        var urlRequest = URLRequest(
+            url: validUrl
+        )
+        
+        urlRequest.httpMethod = "GET"
+        
+        urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        return URLSession.shared.dataTaskPublisher(for: urlRequest)
+            .tryMap { (data: Data, response: URLResponse) in
+                guard let httpResponse = response as? HTTPURLResponse else {
+                    throw RecetasAppError.errorDesconocido
+                }
+                // 202 - Cuando la aplicacion es exitoso
+                if (200 ... 299 ~= httpResponse.statusCode) {
+                    return data
+                }
+                
+                //404 - cualquier rango qeu supere al 200 y 299 en el servicio pasa automaticamente al errorResponse
+                let errorResponse = try JSONDecoder().decode(ErrorResponse.self, from: data)
+                throw RecetasAppError.errorData(errorResponse.message)
+            }
+            .decode(type: RestauranteSearchResponse.self, decoder: JSONDecoder())
+            .eraseToAnyPublisher()
+    }
+    
     enum RecetasAppError: Error, Equatable {
         case errorURL
         case urlInvalido
