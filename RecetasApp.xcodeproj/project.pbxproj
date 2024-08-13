@@ -17,7 +17,6 @@
 		FA6483F02C619F6B001C4722 /* Receta.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6483EF2C619F6B001C4722 /* Receta.swift */; };
 		FA6CDF022C6674AE000FB5DA /* SharedRecetaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6CDF012C6674AE000FB5DA /* SharedRecetaViewModel.swift */; };
 		FA6E73D42C6275A1000E84EE /* RecetaCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E73D32C6275A1000E84EE /* RecetaCard.swift */; };
-		FA6FC8762C62E342003A6726 /* AppRootManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FC8752C62E342003A6726 /* AppRootManager.swift */; };
 		FA6FC87A2C62E41B003A6726 /* PrincipalRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FC8792C62E41B003A6726 /* PrincipalRootView.swift */; };
 		FA6FC87E2C62E6A9003A6726 /* DetailScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FC87D2C62E6A9003A6726 /* DetailScreenView.swift */; };
 		FA6FC8832C62E8C0003A6726 /* TextToolbarContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FC8822C62E8C0003A6726 /* TextToolbarContent.swift */; };
@@ -30,6 +29,7 @@
 		FA7327692C6A766000AE7A9A /* MapScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7327682C6A766000AE7A9A /* MapScreenViewModel.swift */; };
 		FA73276B2C6A766F00AE7A9A /* MapScreenUiState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA73276A2C6A766F00AE7A9A /* MapScreenUiState.swift */; };
 		FA73276D2C6A860400AE7A9A /* MapScreenModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA73276C2C6A860400AE7A9A /* MapScreenModalView.swift */; };
+		FA739C332C6BB2FD00A61683 /* SharedMapaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA739C322C6BB2FD00A61683 /* SharedMapaViewModel.swift */; };
 		FA7D5BE92C5EA05A00D20E45 /* RecetasAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7D5BE82C5EA05A00D20E45 /* RecetasAppApp.swift */; };
 		FA7D5BED2C5EA05B00D20E45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA7D5BEC2C5EA05B00D20E45 /* Assets.xcassets */; };
 		FA7D5BF02C5EA05B00D20E45 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA7D5BEF2C5EA05B00D20E45 /* Preview Assets.xcassets */; };
@@ -82,7 +82,6 @@
 		FA6483EF2C619F6B001C4722 /* Receta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Receta.swift; sourceTree = "<group>"; };
 		FA6CDF012C6674AE000FB5DA /* SharedRecetaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedRecetaViewModel.swift; sourceTree = "<group>"; };
 		FA6E73D32C6275A1000E84EE /* RecetaCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecetaCard.swift; sourceTree = "<group>"; };
-		FA6FC8752C62E342003A6726 /* AppRootManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootManager.swift; sourceTree = "<group>"; };
 		FA6FC8792C62E41B003A6726 /* PrincipalRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrincipalRootView.swift; sourceTree = "<group>"; };
 		FA6FC87D2C62E6A9003A6726 /* DetailScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailScreenView.swift; sourceTree = "<group>"; };
 		FA6FC8822C62E8C0003A6726 /* TextToolbarContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextToolbarContent.swift; sourceTree = "<group>"; };
@@ -95,6 +94,7 @@
 		FA7327682C6A766000AE7A9A /* MapScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapScreenViewModel.swift; sourceTree = "<group>"; };
 		FA73276A2C6A766F00AE7A9A /* MapScreenUiState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapScreenUiState.swift; sourceTree = "<group>"; };
 		FA73276C2C6A860400AE7A9A /* MapScreenModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapScreenModalView.swift; sourceTree = "<group>"; };
+		FA739C322C6BB2FD00A61683 /* SharedMapaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedMapaViewModel.swift; sourceTree = "<group>"; };
 		FA7D5BE52C5EA05A00D20E45 /* RecetasApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecetasApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA7D5BE82C5EA05A00D20E45 /* RecetasAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecetasAppApp.swift; sourceTree = "<group>"; };
 		FA7D5BEC2C5EA05B00D20E45 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -170,6 +170,7 @@
 			children = (
 				FA7D5BE82C5EA05A00D20E45 /* RecetasAppApp.swift */,
 				FA6CDF012C6674AE000FB5DA /* SharedRecetaViewModel.swift */,
+				FA739C322C6BB2FD00A61683 /* SharedMapaViewModel.swift */,
 				FA6FC8742C62E2F2003A6726 /* Root */,
 			);
 			path = App;
@@ -178,11 +179,11 @@
 		FA6483DF2C6193D0001C4722 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				FA6AB5C72C6AE206004191B0 /* MapModal */,
 				FA6FC87F2C62E6E4003A6726 /* Toolbar */,
 				FA6FC87B2C62E65A003A6726 /* Home */,
 				FA6FC87C2C62E690003A6726 /* Detail */,
 				FA6FC8892C630B51003A6726 /* Map */,
+				FA6AB5C72C6AE206004191B0 /* MapModal */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -280,7 +281,6 @@
 		FA6FC8742C62E2F2003A6726 /* Root */ = {
 			isa = PBXGroup;
 			children = (
-				FA6FC8752C62E342003A6726 /* AppRootManager.swift */,
 				FA6FC8772C62E3DA003A6726 /* RootView */,
 			);
 			path = Root;
@@ -656,10 +656,10 @@
 				FA6E73D42C6275A1000E84EE /* RecetaCard.swift in Sources */,
 				FAA4E7902C643A7E006F5F2A /* DetailScreenUiState.swift in Sources */,
 				FA7327652C6A6A6000AE7A9A /* RestauranteRepository.swift in Sources */,
+				FA739C332C6BB2FD00A61683 /* SharedMapaViewModel.swift in Sources */,
 				FA6FC8882C62F209003A6726 /* View+Extension.swift in Sources */,
 				FAA271AF2C61B2EF005AC21C /* HomeScreenViewModel.swift in Sources */,
 				FA7EC1592C65340300EF602E /* RoundedCorner.swift in Sources */,
-				FA6FC8762C62E342003A6726 /* AppRootManager.swift in Sources */,
 				FA7EC15D2C653FD400EF602E /* DetalleCard.swift in Sources */,
 				FA6FC87E2C62E6A9003A6726 /* DetailScreenView.swift in Sources */,
 				FA6483E92C619CC0001C4722 /* ErrorResponse.swift in Sources */,

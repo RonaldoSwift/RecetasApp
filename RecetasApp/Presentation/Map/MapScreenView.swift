@@ -14,6 +14,7 @@ struct MapScreenView: View {
         span: MKCoordinateSpan(latitudeDelta: 0.07, longitudeDelta: 0.07) // Ajuste del zoom para cubrir América del Norte
     )
     
+    @EnvironmentObject private var sharedMapaViewModel : SharedMapaViewModel
     @State private var restaurantesArray : [Restaurante] = []
     @State private var showAlert: Bool = false
     @State private var showLoading: Bool = false
@@ -26,13 +27,14 @@ struct MapScreenView: View {
                 Map(coordinateRegion: $region, annotationItems: restaurantesArray) { restaurante in
                     MapAnnotation(coordinate: restaurante.coordenadas) {
                         Button {
+                            sharedMapaViewModel.restaurante = restaurante
                             showModal = true
                         } label: {
                             VStack {
-                                Image(systemName: "house.fill")
+                                Image(ImageResource.mapRestaurant)
                                     .resizable()
                                     .frame(width: 30, height: 30)
-                                    .foregroundColor(.blue)
+                                    .foregroundColor(.red)
                                 Text(restaurante.name)
                                     .font(.caption)
                                     .foregroundColor(Color.black)
@@ -78,13 +80,7 @@ struct MapScreenView: View {
             }
         })
         .sheet(isPresented: $showModal) {
-            MapScreenModalView(
-                mapScreenViewModel: MapScreenViewModel(
-                    detalleRestauranteRepository: RestauranteRepository(
-                        recetasWebService: RecetasWebService()
-                    )
-                )
-            )
+            MapScreenModalView()
         }
     }
 }
