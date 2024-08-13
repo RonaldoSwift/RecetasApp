@@ -32,7 +32,6 @@ struct HomeScreenView: View {
         }
     }
     
-    @State private var titulo: String = ""
     @State private var showAlert: Bool = false
     @State private var showLoading: Bool = false
     @State private var mensajeDeAlerta: String = ""

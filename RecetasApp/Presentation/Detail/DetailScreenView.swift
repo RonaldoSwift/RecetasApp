@@ -12,7 +12,7 @@ struct DetailScreenView: View {
     
     @EnvironmentObject private var sharedRecetaViewModel : SharedRecetaViewModel
     @StateObject private var detailScreenViewModel = DetailScreenViewModel(
-        detalleRepository: DetalleRepository(
+        recetaRepository: RecetaRepository(
             recetasWebService:
                 RecetasWebService()
         )
@@ -57,8 +57,6 @@ struct DetailScreenView: View {
                                 Spacer()
                             }
                             .padding(.leading, 20)
-                            
-                            
                             Text(resumen)
                                 .padding()
                         }

@@ -15,7 +15,6 @@
 		FA6483E92C619CC0001C4722 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6483E82C619CC0001C4722 /* ErrorResponse.swift */; };
 		FA6483EE2C619E61001C4722 /* RecetaRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6483ED2C619E61001C4722 /* RecetaRepository.swift */; };
 		FA6483F02C619F6B001C4722 /* Receta.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6483EF2C619F6B001C4722 /* Receta.swift */; };
-		FA6C97522C67CE5500624531 /* RestauranteMarcador.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6C97512C67CE5500624531 /* RestauranteMarcador.swift */; };
 		FA6CDF022C6674AE000FB5DA /* SharedRecetaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6CDF012C6674AE000FB5DA /* SharedRecetaViewModel.swift */; };
 		FA6E73D42C6275A1000E84EE /* RecetaCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E73D32C6275A1000E84EE /* RecetaCard.swift */; };
 		FA6FC8762C62E342003A6726 /* AppRootManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FC8752C62E342003A6726 /* AppRootManager.swift */; };
@@ -25,6 +24,12 @@
 		FA6FC8862C62F1C0003A6726 /* NavigationModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FC8852C62F1C0003A6726 /* NavigationModifier.swift */; };
 		FA6FC8882C62F209003A6726 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FC8872C62F209003A6726 /* View+Extension.swift */; };
 		FA6FC88B2C630B8F003A6726 /* MapScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FC88A2C630B8F003A6726 /* MapScreenView.swift */; };
+		FA7327632C6A64D400AE7A9A /* RestauranteSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7327622C6A64D400AE7A9A /* RestauranteSearchResponse.swift */; };
+		FA7327652C6A6A6000AE7A9A /* RestauranteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7327642C6A6A6000AE7A9A /* RestauranteRepository.swift */; };
+		FA7327672C6A6B7000AE7A9A /* Restaurante.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7327662C6A6B7000AE7A9A /* Restaurante.swift */; };
+		FA7327692C6A766000AE7A9A /* MapScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7327682C6A766000AE7A9A /* MapScreenViewModel.swift */; };
+		FA73276B2C6A766F00AE7A9A /* MapScreenUiState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA73276A2C6A766F00AE7A9A /* MapScreenUiState.swift */; };
+		FA73276D2C6A860400AE7A9A /* MapScreenModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA73276C2C6A860400AE7A9A /* MapScreenModalView.swift */; };
 		FA7D5BE92C5EA05A00D20E45 /* RecetasAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7D5BE82C5EA05A00D20E45 /* RecetasAppApp.swift */; };
 		FA7D5BED2C5EA05B00D20E45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA7D5BEC2C5EA05B00D20E45 /* Assets.xcassets */; };
 		FA7D5BF02C5EA05B00D20E45 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA7D5BEF2C5EA05B00D20E45 /* Preview Assets.xcassets */; };
@@ -36,7 +41,6 @@
 		FAA271AF2C61B2EF005AC21C /* HomeScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA271AE2C61B2EF005AC21C /* HomeScreenViewModel.swift */; };
 		FAA271B12C61B410005AC21C /* HomeScreenUiState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA271B02C61B410005AC21C /* HomeScreenUiState.swift */; };
 		FAA4E7882C642E77006F5F2A /* DetalleResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA4E7872C642E77006F5F2A /* DetalleResponse.swift */; };
-		FAA4E78A2C643688006F5F2A /* DetalleRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA4E7892C643688006F5F2A /* DetalleRepository.swift */; };
 		FAA4E78C2C643692006F5F2A /* Detalle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA4E78B2C643692006F5F2A /* Detalle.swift */; };
 		FAA4E78E2C643A60006F5F2A /* DetailScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA4E78D2C643A60006F5F2A /* DetailScreenViewModel.swift */; };
 		FAA4E7902C643A7E006F5F2A /* DetailScreenUiState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA4E78F2C643A7E006F5F2A /* DetailScreenUiState.swift */; };
@@ -76,7 +80,6 @@
 		FA6483E82C619CC0001C4722 /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
 		FA6483ED2C619E61001C4722 /* RecetaRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecetaRepository.swift; sourceTree = "<group>"; };
 		FA6483EF2C619F6B001C4722 /* Receta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Receta.swift; sourceTree = "<group>"; };
-		FA6C97512C67CE5500624531 /* RestauranteMarcador.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestauranteMarcador.swift; sourceTree = "<group>"; };
 		FA6CDF012C6674AE000FB5DA /* SharedRecetaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedRecetaViewModel.swift; sourceTree = "<group>"; };
 		FA6E73D32C6275A1000E84EE /* RecetaCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecetaCard.swift; sourceTree = "<group>"; };
 		FA6FC8752C62E342003A6726 /* AppRootManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootManager.swift; sourceTree = "<group>"; };
@@ -86,6 +89,12 @@
 		FA6FC8852C62F1C0003A6726 /* NavigationModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationModifier.swift; sourceTree = "<group>"; };
 		FA6FC8872C62F209003A6726 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		FA6FC88A2C630B8F003A6726 /* MapScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapScreenView.swift; sourceTree = "<group>"; };
+		FA7327622C6A64D400AE7A9A /* RestauranteSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestauranteSearchResponse.swift; sourceTree = "<group>"; };
+		FA7327642C6A6A6000AE7A9A /* RestauranteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestauranteRepository.swift; sourceTree = "<group>"; };
+		FA7327662C6A6B7000AE7A9A /* Restaurante.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurante.swift; sourceTree = "<group>"; };
+		FA7327682C6A766000AE7A9A /* MapScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapScreenViewModel.swift; sourceTree = "<group>"; };
+		FA73276A2C6A766F00AE7A9A /* MapScreenUiState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapScreenUiState.swift; sourceTree = "<group>"; };
+		FA73276C2C6A860400AE7A9A /* MapScreenModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapScreenModalView.swift; sourceTree = "<group>"; };
 		FA7D5BE52C5EA05A00D20E45 /* RecetasApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecetasApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA7D5BE82C5EA05A00D20E45 /* RecetasAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecetasAppApp.swift; sourceTree = "<group>"; };
 		FA7D5BEC2C5EA05B00D20E45 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -100,7 +109,6 @@
 		FAA271AE2C61B2EF005AC21C /* HomeScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewModel.swift; sourceTree = "<group>"; };
 		FAA271B02C61B410005AC21C /* HomeScreenUiState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenUiState.swift; sourceTree = "<group>"; };
 		FAA4E7872C642E77006F5F2A /* DetalleResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleResponse.swift; sourceTree = "<group>"; };
-		FAA4E7892C643688006F5F2A /* DetalleRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleRepository.swift; sourceTree = "<group>"; };
 		FAA4E78B2C643692006F5F2A /* Detalle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detalle.swift; sourceTree = "<group>"; };
 		FAA4E78D2C643A60006F5F2A /* DetailScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailScreenViewModel.swift; sourceTree = "<group>"; };
 		FAA4E78F2C643A7E006F5F2A /* DetailScreenUiState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailScreenUiState.swift; sourceTree = "<group>"; };
@@ -170,6 +178,7 @@
 		FA6483DF2C6193D0001C4722 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				FA6AB5C72C6AE206004191B0 /* MapModal */,
 				FA6FC87F2C62E6E4003A6726 /* Toolbar */,
 				FA6FC87B2C62E65A003A6726 /* Home */,
 				FA6FC87C2C62E690003A6726 /* Detail */,
@@ -209,6 +218,7 @@
 			children = (
 				FA6483E62C619853001C4722 /* RecetaResponse.swift */,
 				FAA4E7872C642E77006F5F2A /* DetalleResponse.swift */,
+				FA7327622C6A64D400AE7A9A /* RestauranteSearchResponse.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -226,7 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				FA6483ED2C619E61001C4722 /* RecetaRepository.swift */,
-				FAA4E7892C643688006F5F2A /* DetalleRepository.swift */,
+				FA7327642C6A6A6000AE7A9A /* RestauranteRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -236,9 +246,17 @@
 			children = (
 				FA6483EF2C619F6B001C4722 /* Receta.swift */,
 				FAA4E78B2C643692006F5F2A /* Detalle.swift */,
-				FA6C97512C67CE5500624531 /* RestauranteMarcador.swift */,
+				FA7327662C6A6B7000AE7A9A /* Restaurante.swift */,
 			);
 			path = Modelo;
+			sourceTree = "<group>";
+		};
+		FA6AB5C72C6AE206004191B0 /* MapModal */ = {
+			isa = PBXGroup;
+			children = (
+				FA73276C2C6A860400AE7A9A /* MapScreenModalView.swift */,
+			);
+			path = MapModal;
 			sourceTree = "<group>";
 		};
 		FA6E73D12C627583000E84EE /* Core */ = {
@@ -325,6 +343,8 @@
 			isa = PBXGroup;
 			children = (
 				FA6FC88A2C630B8F003A6726 /* MapScreenView.swift */,
+				FA7327682C6A766000AE7A9A /* MapScreenViewModel.swift */,
+				FA73276A2C6A766F00AE7A9A /* MapScreenUiState.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -629,11 +649,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAA4E78A2C643688006F5F2A /* DetalleRepository.swift in Sources */,
 				FAA4E7882C642E77006F5F2A /* DetalleResponse.swift in Sources */,
+				FA7327632C6A64D400AE7A9A /* RestauranteSearchResponse.swift in Sources */,
 				FA6483F02C619F6B001C4722 /* Receta.swift in Sources */,
+				FA7327672C6A6B7000AE7A9A /* Restaurante.swift in Sources */,
 				FA6E73D42C6275A1000E84EE /* RecetaCard.swift in Sources */,
 				FAA4E7902C643A7E006F5F2A /* DetailScreenUiState.swift in Sources */,
+				FA7327652C6A6A6000AE7A9A /* RestauranteRepository.swift in Sources */,
 				FA6FC8882C62F209003A6726 /* View+Extension.swift in Sources */,
 				FAA271AF2C61B2EF005AC21C /* HomeScreenViewModel.swift in Sources */,
 				FA7EC1592C65340300EF602E /* RoundedCorner.swift in Sources */,
@@ -644,16 +666,18 @@
 				FA6FC8832C62E8C0003A6726 /* TextToolbarContent.swift in Sources */,
 				FA6FC8862C62F1C0003A6726 /* NavigationModifier.swift in Sources */,
 				FAA271B12C61B410005AC21C /* HomeScreenUiState.swift in Sources */,
-				FA6C97522C67CE5500624531 /* RestauranteMarcador.swift in Sources */,
 				FA6FC88B2C630B8F003A6726 /* MapScreenView.swift in Sources */,
 				FA6483EE2C619E61001C4722 /* RecetaRepository.swift in Sources */,
 				FAA4E78E2C643A60006F5F2A /* DetailScreenViewModel.swift in Sources */,
 				FA6FC87A2C62E41B003A6726 /* PrincipalRootView.swift in Sources */,
 				FA13D81C2C6158C500EE623D /* HomeScreenView.swift in Sources */,
 				FA6CDF022C6674AE000FB5DA /* SharedRecetaViewModel.swift in Sources */,
+				FA73276D2C6A860400AE7A9A /* MapScreenModalView.swift in Sources */,
+				FA7327692C6A766000AE7A9A /* MapScreenViewModel.swift in Sources */,
 				FA6483E22C6196A0001C4722 /* RecetasWebService.swift in Sources */,
 				FA6483E72C619853001C4722 /* RecetaResponse.swift in Sources */,
 				FA7D5BE92C5EA05A00D20E45 /* RecetasAppApp.swift in Sources */,
+				FA73276B2C6A766F00AE7A9A /* MapScreenUiState.swift in Sources */,
 				FAA4E78C2C643692006F5F2A /* Detalle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
