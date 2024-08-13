@@ -10,7 +10,7 @@ import SwiftUI
 
 struct MapScreenModalView: View {
     
-    var mapScreenViewModel: MapScreenViewModel
+    @EnvironmentObject private var sharedMapaViewModel : SharedMapaViewModel
     @State private var showAlert: Bool = false
     @State private var showLoading: Bool = false
     @State private var mensajeDeAlerta: String = ""
@@ -19,18 +19,61 @@ struct MapScreenModalView: View {
     var body: some View {
         VStack(spacing: 20) {
             
-            Text("titulo")
-            Text("Descripcion")
+            Image(ImageResource.restaurante)
+                .resizable()
+                .scaledToFit()
+                .multilineTextAlignment(.center)
+
+            Text(sharedMapaViewModel.restaurante?.name ?? "")
+                .font(.system(size: 20, weight: .bold))
+                .lineLimit(nil)
+                .allowsTightening(false)
+                .multilineTextAlignment(.center)
             
-            if (isOpen == true) {
-                Image(systemName: "circle.fill")
-                    .foregroundColor(Color.green)
-            } else {
-                Image(systemName: "circle.fill")
-                    .foregroundColor(Color.red)
+            Text(sharedMapaViewModel.restaurante?.description ?? "")
+                .padding()
+                .foregroundColor(Color.black)
+                .font(.system(size: 15, weight: .bold))
+                .lineLimit(nil)
+                .allowsTightening(false)
+                .multilineTextAlignment(.center)
+                .fixedSize(horizontal: false, vertical: true)
+            HStack {
+                VStack(alignment: .leading, spacing: 20) {
+                    HStack {
+                        Text("Telefono: ")
+                        Text("\(sharedMapaViewModel.restaurante?.phoneNumber ?? 0)")
+                    }
+                    
+                    HStack {
+                        Text("Tipo de restaurante: ")
+                        Text(sharedMapaViewModel.restaurante?.type ?? "No")
+                    }
+                    
+                    HStack {
+                        Text("Deleyveri:")
+                        if(sharedMapaViewModel.restaurante?.deliveryEnabled == true) {
+                            Text("Si")
+                        } else {
+                            Text("No")
+                        }
+                    }
+                    
+                    HStack {
+                        Text("Abierto: ")
+                        if (sharedMapaViewModel.restaurante?.isOpen == true) {
+                            Image(systemName: "circle.fill")
+                                .foregroundColor(Color.green)
+                        } else {
+                            Image(systemName: "circle.fill")
+                                .foregroundColor(Color.red)
+                        }
+                    }
+                }
+                Spacer()
             }
-            
         }
+        .padding()
         .alert(isPresented: $showAlert) {
             Alert(
                 title: Text("Error"),

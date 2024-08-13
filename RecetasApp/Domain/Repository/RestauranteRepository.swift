@@ -26,7 +26,9 @@ class RestauranteRepository {
                     id: restaurantResponse.id,
                     name: restaurantResponse.name,
                     description: restaurantResponse.description,
+                    phoneNumber: restaurantResponse.phoneNumber,
                     deliveryEnabled: restaurantResponse.deliveryEnabled,
+                    type: restaurantResponse.type,
                     isOpen: restaurantResponse.isOpen,
                     coordenadas: CLLocationCoordinate2D(
                         latitude: restaurantResponse.address.latitude,

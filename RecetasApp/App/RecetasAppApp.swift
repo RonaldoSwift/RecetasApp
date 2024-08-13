@@ -10,8 +10,8 @@ import SwiftUI
 @main
 struct RecetasAppApp: App {
     
-    @StateObject private var appRootManager = AppRootManager()
     var sharedRecetaViewModel = SharedRecetaViewModel()
+    var sharedMapaViewModel = SharedMapaViewModel()
     
     init() {
         let navBarAppearence = UINavigationBarAppearance() // use as global variable, otherwise SwiftUI may cause problems.
@@ -25,13 +25,10 @@ struct RecetasAppApp: App {
     var body: some Scene {
         WindowGroup {
             Group {
-                switch appRootManager.currentRoot {
-                case .principal:
-                    PrincipalRootView()
-                        .environmentObject(sharedRecetaViewModel)
-                }
+                PrincipalRootView()
+                    .environmentObject(sharedRecetaViewModel)
+                    .environmentObject(sharedMapaViewModel)
             }
-            .environmentObject(appRootManager)
         }
     }
 }
