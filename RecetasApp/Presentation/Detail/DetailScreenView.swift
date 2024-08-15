@@ -25,6 +25,7 @@ struct DetailScreenView: View {
     @State private var showLoading: Bool = false
     @State private var showAlert:Bool = false
     @State private var mensajeDeAlerta: String = ""
+    @State private var showModal: Bool = false
         
     var body: some View {
         
@@ -82,7 +83,9 @@ struct DetailScreenView: View {
         }
         
         .toolbar(content: {
-            TextToolbarContent(tituloDePantalla: "Detalle")
+            TextToolbarContent(tituloDePantalla: "Detalle", onClick: {
+                showModal = true
+            })
         })
         .navigation(MapScreenView(), $irAMap)
         .navigationBarBackButtonHidden(true)
@@ -118,6 +121,9 @@ struct DetailScreenView: View {
                 showLoading = false
             }
         }
+        .sheet(isPresented: $showModal, content: {
+            UserScreenModalView()
+        })
     }
 }
 

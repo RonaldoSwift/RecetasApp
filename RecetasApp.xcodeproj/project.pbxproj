@@ -44,6 +44,9 @@
 		FAA4E78C2C643692006F5F2A /* Detalle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA4E78B2C643692006F5F2A /* Detalle.swift */; };
 		FAA4E78E2C643A60006F5F2A /* DetailScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA4E78D2C643A60006F5F2A /* DetailScreenViewModel.swift */; };
 		FAA4E7902C643A7E006F5F2A /* DetailScreenUiState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA4E78F2C643A7E006F5F2A /* DetailScreenUiState.swift */; };
+		FAC79B8D2C6D07B600B31101 /* UserScreenModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC79B8C2C6D07B600B31101 /* UserScreenModalView.swift */; };
+		FAC79B8F2C6D172D00B31101 /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC79B8E2C6D172D00B31101 /* CameraManager.swift */; };
+		FAC79B982C6D28E800B31101 /* AccessCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC79B972C6D28E800B31101 /* AccessCameraView.swift */; };
 		FBCC181BF08BF90C7AC01F44 /* Pods_RecetasAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6B2B12D27AE8173C29FC989 /* Pods_RecetasAppTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -112,6 +115,9 @@
 		FAA4E78B2C643692006F5F2A /* Detalle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detalle.swift; sourceTree = "<group>"; };
 		FAA4E78D2C643A60006F5F2A /* DetailScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailScreenViewModel.swift; sourceTree = "<group>"; };
 		FAA4E78F2C643A7E006F5F2A /* DetailScreenUiState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailScreenUiState.swift; sourceTree = "<group>"; };
+		FAC79B8C2C6D07B600B31101 /* UserScreenModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserScreenModalView.swift; sourceTree = "<group>"; };
+		FAC79B8E2C6D172D00B31101 /* CameraManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraManager.swift; sourceTree = "<group>"; };
+		FAC79B972C6D28E800B31101 /* AccessCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessCameraView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +185,7 @@
 		FA6483DF2C6193D0001C4722 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				FAC79B892C6D076A00B31101 /* User */,
 				FA6FC87F2C62E6E4003A6726 /* Toolbar */,
 				FA6FC87B2C62E65A003A6726 /* Home */,
 				FA6FC87C2C62E690003A6726 /* Detail */,
@@ -409,6 +416,24 @@
 				FA7D5C052C5EA05C00D20E45 /* RecetasAppUITestsLaunchTests.swift */,
 			);
 			path = RecetasAppUITests;
+			sourceTree = "<group>";
+		};
+		FAC79B892C6D076A00B31101 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				FAC79B962C6D28D800B31101 /* Camara */,
+				FAC79B8C2C6D07B600B31101 /* UserScreenModalView.swift */,
+				FAC79B8E2C6D172D00B31101 /* CameraManager.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		FAC79B962C6D28D800B31101 /* Camara */ = {
+			isa = PBXGroup;
+			children = (
+				FAC79B972C6D28E800B31101 /* AccessCameraView.swift */,
+			);
+			path = Camara;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -649,8 +674,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAC79B8D2C6D07B600B31101 /* UserScreenModalView.swift in Sources */,
 				FAA4E7882C642E77006F5F2A /* DetalleResponse.swift in Sources */,
 				FA7327632C6A64D400AE7A9A /* RestauranteSearchResponse.swift in Sources */,
+				FAC79B982C6D28E800B31101 /* AccessCameraView.swift in Sources */,
 				FA6483F02C619F6B001C4722 /* Receta.swift in Sources */,
 				FA7327672C6A6B7000AE7A9A /* Restaurante.swift in Sources */,
 				FA6E73D42C6275A1000E84EE /* RecetaCard.swift in Sources */,
@@ -666,6 +693,7 @@
 				FA6FC8832C62E8C0003A6726 /* TextToolbarContent.swift in Sources */,
 				FA6FC8862C62F1C0003A6726 /* NavigationModifier.swift in Sources */,
 				FAA271B12C61B410005AC21C /* HomeScreenUiState.swift in Sources */,
+				FAC79B8F2C6D172D00B31101 /* CameraManager.swift in Sources */,
 				FA6FC88B2C630B8F003A6726 /* MapScreenView.swift in Sources */,
 				FA6483EE2C619E61001C4722 /* RecetaRepository.swift in Sources */,
 				FAA4E78E2C643A60006F5F2A /* DetailScreenViewModel.swift in Sources */,
@@ -848,6 +876,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs to capture image to show in the app.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -884,6 +913,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs to capture image to show in the app.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

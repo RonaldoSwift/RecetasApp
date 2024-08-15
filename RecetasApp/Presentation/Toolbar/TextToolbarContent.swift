@@ -11,7 +11,8 @@ import SwiftUI
 struct TextToolbarContent: ToolbarContent {
     
     @Environment(\.presentationMode) var presentationMode
-    var tituloDePantalla: String 
+    var tituloDePantalla: String
+    var onClick: () -> Void
     
     var body: some ToolbarContent {
         ToolbarItem(placement: .navigationBarLeading) {
@@ -29,6 +30,16 @@ struct TextToolbarContent: ToolbarContent {
         }
         ToolbarItem(placement: .principal) {
             Text(tituloDePantalla)
+        }
+        
+        ToolbarItem(placement: .navigationBarTrailing) {
+            Button(action: {
+                onClick()
+            }, label: {
+                Image(ImageResource.perfil)
+                    .resizable()
+                    .frame(width: 40, height: 40)
+            })
         }
     }
 }
