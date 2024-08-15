@@ -6,6 +6,7 @@ target 'RecetasApp' do
   use_frameworks!
 
   pod 'Kingfisher', '~> 7.0'
+  
   # Pods for RecetasApp
 
   target 'RecetasAppTests' do

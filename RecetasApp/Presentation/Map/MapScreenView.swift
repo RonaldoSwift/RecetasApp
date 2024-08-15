@@ -20,6 +20,7 @@ struct MapScreenView: View {
     @State private var showLoading: Bool = false
     @State private var mensajeDeAlerta: String = ""
     @State private var showModal: Bool = false
+    @State private var showModalUser: Bool = false
     
     var body: some View {
         ZStack{
@@ -49,7 +50,9 @@ struct MapScreenView: View {
             }
         }
         .toolbar(content: {
-            TextToolbarContent(tituloDePantalla: "Mapa")
+            TextToolbarContent(tituloDePantalla: "Mapa", onClick: {
+                showModalUser = true
+            })
         })
         .navigationBarBackButtonHidden(true)
         .ignoresSafeArea(.all)
@@ -82,6 +85,9 @@ struct MapScreenView: View {
         .sheet(isPresented: $showModal) {
             MapScreenModalView()
         }
+        .sheet(isPresented: $showModalUser, content: {
+            UserScreenModalView()
+        })
     }
 }
 
