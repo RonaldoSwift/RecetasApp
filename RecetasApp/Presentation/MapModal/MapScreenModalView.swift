@@ -15,9 +15,20 @@ struct MapScreenModalView: View {
     @State private var showLoading: Bool = false
     @State private var mensajeDeAlerta: String = ""
     @State private var isOpen: Bool = false
+    var onClickBackMap: () -> Void
     
     var body: some View {
         VStack(spacing: 20) {
+            
+            HStack {
+                Spacer()
+                Button {
+                    onClickBackMap()
+                } label: {
+                    Image(systemName: "chevron.backward.circle.fill")
+                        .padding()
+                }
+            }
             
             Image(ImageResource.restaurante)
                 .resizable()

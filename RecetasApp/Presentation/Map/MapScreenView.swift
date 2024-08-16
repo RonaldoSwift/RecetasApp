@@ -50,7 +50,7 @@ struct MapScreenView: View {
             }
         }
         .toolbar(content: {
-            TextToolbarContent(tituloDePantalla: "Mapa", onClick: {
+            TextUserToolbarContent(tituloDePantalla: "Mapa", onClick: {
                 showModalUser = true
             })
         })
@@ -83,10 +83,16 @@ struct MapScreenView: View {
             }
         })
         .sheet(isPresented: $showModal) {
-            MapScreenModalView()
+            MapScreenModalView(onClickBackMap: {
+                showModal = false
+            })
         }
         .sheet(isPresented: $showModalUser, content: {
-            UserScreenModalView()
+            UserScreenModalView(onClickBack: {
+                showModalUser = false
+            }, onClickSave: {
+                showModalUser = false
+            })
         })
     }
 }

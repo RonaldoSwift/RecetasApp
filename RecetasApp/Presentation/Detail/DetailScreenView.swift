@@ -26,7 +26,7 @@ struct DetailScreenView: View {
     @State private var showAlert:Bool = false
     @State private var mensajeDeAlerta: String = ""
     @State private var showModal: Bool = false
-        
+    
     var body: some View {
         
         VStack {
@@ -83,7 +83,7 @@ struct DetailScreenView: View {
         }
         
         .toolbar(content: {
-            TextToolbarContent(tituloDePantalla: "Detalle", onClick: {
+            TextUserToolbarContent(tituloDePantalla: "Detalle", onClick: {
                 showModal = true
             })
         })
@@ -101,6 +101,7 @@ struct DetailScreenView: View {
             )
         })
         .onAppear(perform: {
+            print("Hola")
             detailScreenViewModel.startDetalle(id: sharedRecetaViewModel.receta?.id ?? -1)
         })
         .onReceive(detailScreenViewModel.$detailScreenUiState) { detailState in
@@ -122,7 +123,12 @@ struct DetailScreenView: View {
             }
         }
         .sheet(isPresented: $showModal, content: {
-            UserScreenModalView()
+            UserScreenModalView(
+                onClickBack: {
+                    showModal = false
+                }, onClickSave: {
+                    showModal = false
+                })
         })
     }
 }

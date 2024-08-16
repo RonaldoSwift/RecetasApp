@@ -15,34 +15,26 @@ struct UserScreenModalView: View {
     @State private var userClickOnCamera = false
     @State private var presentarSelectorDeImagen = false
     
-    @Environment(\.presentationMode) var presentationMode
+    @EnvironmentObject private var sharedRecetaViewModel : SharedRecetaViewModel
+
+    var onClickBack : () -> Void
+    var onClickSave : () -> Void
     
     @State private var inputUIImage: UIImage?
-    @State private var image: Image = Image(systemName: "person.crop.square.badge.camera.fill")
+    @State private var imageSwiftUI: Image = Image(systemName: "person.crop.square.badge.camera.fill")
     @State private var showAlert: Bool = false
     @State private var showLoading: Bool = false
     @State private var mensajeDeAlerta: String = ""
     @State private var isOpen: Bool = false
     @State private var irACamara: Bool = false
-    @State private var showModal: Bool = false
-
+    @State private var saveImage: Bool = false
+    @State private var isPresent = false
+    
     var body: some View {
-        
         NavigationView {
             VStack(spacing: 20){
-                HStack{
-                    Spacer()
-                    Button(action: {}, label: {
-                        Text("Guardar")
-                            .padding()
-                            .foregroundColor(Color.white)
-                            .background(Color.colorMorado)
-                            .cornerRadius(10)
-                    })
-                }
-                
                 Spacer()
-                image
+                imageSwiftUI
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .clipShape(Circle())
@@ -72,19 +64,23 @@ struct UserScreenModalView: View {
                     Spacer()
                 }
                 Spacer()
-                Button(action: {
-                    presentationMode.wrappedValue.dismiss()
-                }, label: {
-                    Text("Cancelar")
-                        .frame(maxWidth: .infinity)
-                        .padding()
-                        .foregroundColor(Color.white)
-                        .background(Color.colorMorado)
-                        .cornerRadius(30)
-                })
+                
             }
             .padding()
-            
+            .toolbar(content: {
+                TextSaveToolbarContent(
+                    tituloDePantalla: "User",
+                    imagenDePantalla: "",
+                    onClick: {
+                        guard let noNullInputUIImage = inputUIImage else {return}
+                        sharedRecetaViewModel.publicadorUIImage = noNullInputUIImage
+                        onClickSave()
+                    },
+                    onClickBack: {
+                        onClickBack()
+                    }
+                )
+            })
             .alert(isPresented: $showAlert) {
                 Alert(
                     title: Text("Error"),
@@ -98,7 +94,8 @@ struct UserScreenModalView: View {
             }
             .onChange(of: inputUIImage) { _ in
                 guard let noNullInputUIImage = inputUIImage else {return}
-                image = Image(uiImage: noNullInputUIImage)
+                imageSwiftUI = Image(uiImage: noNullInputUIImage)
+
             }
             .sheet(isPresented: $irACamara) {
                 AccessCameraView(selectedImage: $inputUIImage)
