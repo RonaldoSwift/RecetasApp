@@ -36,9 +36,12 @@ struct TextToolbarContent: ToolbarContent {
             Button(action: {
                 onClick()
             }, label: {
-                Image(ImageResource.perfil)
+                Image(systemName: "person.crop.square.badge.camera.fill")
                     .resizable()
                     .frame(width: 40, height: 40)
+                    .foregroundColor(Color.colorMorado)
+                    .background(Color.black)
+                    .cornerRadius(20)
             })
         }
     }
