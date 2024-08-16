@@ -8,11 +8,14 @@
 import Foundation
 import SwiftUI
 
-struct TextToolbarContent: ToolbarContent {
+struct TextUserToolbarContent: ToolbarContent {
     
     @Environment(\.presentationMode) var presentationMode
     var tituloDePantalla: String
     var onClick: () -> Void
+    @EnvironmentObject private var sharedRecetaViewModel : SharedRecetaViewModel
+    @State private var imageSwiftUi: Image = Image(systemName: "person.crop.square.badge.camera.fill")
+    
     
     var body: some ToolbarContent {
         ToolbarItem(placement: .navigationBarLeading) {
@@ -36,13 +39,17 @@ struct TextToolbarContent: ToolbarContent {
             Button(action: {
                 onClick()
             }, label: {
-                Image(systemName: "person.crop.square.badge.camera.fill")
+                imageSwiftUi
                     .resizable()
                     .frame(width: 40, height: 40)
                     .foregroundColor(Color.colorMorado)
                     .background(Color.black)
                     .cornerRadius(20)
             })
+            .onReceive(sharedRecetaViewModel.$publicadorUIImage) { uiImageNuleable in
+                guard let noNullUIImage = uiImageNuleable else {return}
+                imageSwiftUi = Image(uiImage: noNullUIImage)
+            }
         }
     }
 }

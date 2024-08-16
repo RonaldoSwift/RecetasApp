@@ -11,6 +11,7 @@ struct HomeScreenView: View {
     
     var onClickInDetail: () -> Void
     
+    @EnvironmentObject private var sharedRecetaViewModel : SharedRecetaViewModel
     @StateObject private var homeScreenViewModel = HomeScreenViewModel(
         recetaRepository: RecetaRepository(
             recetasWebService: RecetasWebService()
@@ -20,7 +21,6 @@ struct HomeScreenView: View {
     @State private var nombreDeReceta: String = ""
     @State private var arrayDeReceta: [Receta] = []
     @State private var searchText = ""
-    @EnvironmentObject private var sharedRecetaViewModel : SharedRecetaViewModel
     
     var resultadosBusquedaDeReceta: [Receta] {
         if searchText.isEmpty {

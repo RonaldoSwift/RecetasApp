@@ -6,7 +6,11 @@
 //
 
 import Foundation
+import UIKit
 
 class SharedRecetaViewModel: ObservableObject {
-    @Published var receta: Receta? = nil
+    //Esto sirve para ir de pantalla 1 a 2
+    var receta: Receta? = nil
+    //Usamos publicador cuando venimos de 2 a 1
+    @Published var publicadorUIImage: UIImage? = nil
 }
