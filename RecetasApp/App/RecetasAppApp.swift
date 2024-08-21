@@ -12,6 +12,7 @@ struct RecetasAppApp: App {
     
     var sharedRecetaViewModel = SharedRecetaViewModel()
     var sharedMapaViewModel = SharedMapaViewModel()
+    let recetaGRDB = RecetaGRDB()
     
     init() {
         let navBarAppearence = UINavigationBarAppearance() // use as global variable, otherwise SwiftUI may cause problems.
@@ -20,6 +21,7 @@ struct RecetasAppApp: App {
         navBarAppearence.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
         UINavigationBar.appearance().standardAppearance = navBarAppearence
         UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearence
+        initGRDB()
     }
     
     var body: some Scene {
@@ -30,5 +32,12 @@ struct RecetasAppApp: App {
                     .environmentObject(sharedMapaViewModel)
             }
         }
+        
+        
+    }
+    
+    private func initGRDB() {
+        recetaGRDB.inicializadorBaseDeDatosiOS15()
+        recetaGRDB.crearTablaDeReceta()
     }
 }

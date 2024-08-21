@@ -10,6 +10,8 @@ import Foundation
 enum HomeScreenUiState {
     case inicial
     case cargando
-    case error(String)
-    case success([Receta])
+    case errorDeWebService(String)
+    case successDeWebService([Receta])
+    case guardadoEnFavoritoDB(String)
+    case errorGuardadoFavoritoDB(String)
 }

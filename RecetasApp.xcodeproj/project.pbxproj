@@ -46,6 +46,10 @@
 		FAA4E78C2C643692006F5F2A /* Detalle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA4E78B2C643692006F5F2A /* Detalle.swift */; };
 		FAA4E78E2C643A60006F5F2A /* DetailScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA4E78D2C643A60006F5F2A /* DetailScreenViewModel.swift */; };
 		FAA4E7902C643A7E006F5F2A /* DetailScreenUiState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA4E78F2C643A7E006F5F2A /* DetailScreenUiState.swift */; };
+		FAAF20F12C764BAB00D3DF95 /* TextHomeToolbarContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAF20F02C764BAB00D3DF95 /* TextHomeToolbarContent.swift */; };
+		FAAF20F42C764E3700D3DF95 /* FavoritoScreenModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAF20F32C764E3700D3DF95 /* FavoritoScreenModalView.swift */; };
+		FABCF9CB2C740E020090C951 /* RecetaGRDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABCF9CA2C740E020090C951 /* RecetaGRDB.swift */; };
+		FABCF9CE2C740EDC0090C951 /* RecetaEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABCF9CD2C740EDC0090C951 /* RecetaEntity.swift */; };
 		FAC79B8D2C6D07B600B31101 /* UserScreenModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC79B8C2C6D07B600B31101 /* UserScreenModalView.swift */; };
 		FAC79B8F2C6D172D00B31101 /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC79B8E2C6D172D00B31101 /* CameraManager.swift */; };
 		FAC79B982C6D28E800B31101 /* AccessCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC79B972C6D28E800B31101 /* AccessCameraView.swift */; };
@@ -119,6 +123,10 @@
 		FAA4E78B2C643692006F5F2A /* Detalle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detalle.swift; sourceTree = "<group>"; };
 		FAA4E78D2C643A60006F5F2A /* DetailScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailScreenViewModel.swift; sourceTree = "<group>"; };
 		FAA4E78F2C643A7E006F5F2A /* DetailScreenUiState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailScreenUiState.swift; sourceTree = "<group>"; };
+		FAAF20F02C764BAB00D3DF95 /* TextHomeToolbarContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextHomeToolbarContent.swift; sourceTree = "<group>"; };
+		FAAF20F32C764E3700D3DF95 /* FavoritoScreenModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritoScreenModalView.swift; sourceTree = "<group>"; };
+		FABCF9CA2C740E020090C951 /* RecetaGRDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecetaGRDB.swift; sourceTree = "<group>"; };
+		FABCF9CD2C740EDC0090C951 /* RecetaEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecetaEntity.swift; sourceTree = "<group>"; };
 		FAC79B8C2C6D07B600B31101 /* UserScreenModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserScreenModalView.swift; sourceTree = "<group>"; };
 		FAC79B8E2C6D172D00B31101 /* CameraManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraManager.swift; sourceTree = "<group>"; };
 		FAC79B972C6D28E800B31101 /* AccessCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessCameraView.swift; sourceTree = "<group>"; };
@@ -195,6 +203,7 @@
 				FA6FC87C2C62E690003A6726 /* Detail */,
 				FA6FC8892C630B51003A6726 /* Map */,
 				FA6AB5C72C6AE206004191B0 /* MapModal */,
+				FAAF20F22C764DE100D3DF95 /* FavoritoModal */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -202,6 +211,7 @@
 		FA6483E02C619664001C4722 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				FABCF9C92C740DC30090C951 /* DataBase */,
 				FA6483E42C61976C001C4722 /* Modelo */,
 				FA6483E32C6196F5001C4722 /* RecetasAppWebService */,
 			);
@@ -346,6 +356,7 @@
 			children = (
 				FA6FC8822C62E8C0003A6726 /* TextUserToolbarContent.swift */,
 				FA7271262C6FAFC600BD72E2 /* TextSaveToolbarContent.swift */,
+				FAAF20F02C764BAB00D3DF95 /* TextHomeToolbarContent.swift */,
 			);
 			path = Toolbar;
 			sourceTree = "<group>";
@@ -429,6 +440,31 @@
 				FA7D5C052C5EA05C00D20E45 /* RecetasAppUITestsLaunchTests.swift */,
 			);
 			path = RecetasAppUITests;
+			sourceTree = "<group>";
+		};
+		FAAF20F22C764DE100D3DF95 /* FavoritoModal */ = {
+			isa = PBXGroup;
+			children = (
+				FAAF20F32C764E3700D3DF95 /* FavoritoScreenModalView.swift */,
+			);
+			path = FavoritoModal;
+			sourceTree = "<group>";
+		};
+		FABCF9C92C740DC30090C951 /* DataBase */ = {
+			isa = PBXGroup;
+			children = (
+				FABCF9CA2C740E020090C951 /* RecetaGRDB.swift */,
+				FABCF9CC2C740EBF0090C951 /* Models */,
+			);
+			path = DataBase;
+			sourceTree = "<group>";
+		};
+		FABCF9CC2C740EBF0090C951 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FABCF9CD2C740EDC0090C951 /* RecetaEntity.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		FAC79B892C6D076A00B31101 /* User */ = {
@@ -691,6 +727,7 @@
 				FA6DE1B62C6E63E500AB425D /* PHImagePickerView.swift in Sources */,
 				FAC79B8D2C6D07B600B31101 /* UserScreenModalView.swift in Sources */,
 				FAA4E7882C642E77006F5F2A /* DetalleResponse.swift in Sources */,
+				FABCF9CE2C740EDC0090C951 /* RecetaEntity.swift in Sources */,
 				FA7327632C6A64D400AE7A9A /* RestauranteSearchResponse.swift in Sources */,
 				FAC79B982C6D28E800B31101 /* AccessCameraView.swift in Sources */,
 				FA6483F02C619F6B001C4722 /* Receta.swift in Sources */,
@@ -698,14 +735,17 @@
 				FA6E73D42C6275A1000E84EE /* RecetaCard.swift in Sources */,
 				FAA4E7902C643A7E006F5F2A /* DetailScreenUiState.swift in Sources */,
 				FA7327652C6A6A6000AE7A9A /* RestauranteRepository.swift in Sources */,
+				FAAF20F12C764BAB00D3DF95 /* TextHomeToolbarContent.swift in Sources */,
 				FA739C332C6BB2FD00A61683 /* SharedMapaViewModel.swift in Sources */,
 				FA6FC8882C62F209003A6726 /* View+Extension.swift in Sources */,
 				FAA271AF2C61B2EF005AC21C /* HomeScreenViewModel.swift in Sources */,
 				FA7271272C6FAFC600BD72E2 /* TextSaveToolbarContent.swift in Sources */,
+				FABCF9CB2C740E020090C951 /* RecetaGRDB.swift in Sources */,
 				FA7EC1592C65340300EF602E /* RoundedCorner.swift in Sources */,
 				FA7EC15D2C653FD400EF602E /* DetalleCard.swift in Sources */,
 				FA6FC87E2C62E6A9003A6726 /* DetailScreenView.swift in Sources */,
 				FA6483E92C619CC0001C4722 /* ErrorResponse.swift in Sources */,
+				FAAF20F42C764E3700D3DF95 /* FavoritoScreenModalView.swift in Sources */,
 				FA6FC8832C62E8C0003A6726 /* TextUserToolbarContent.swift in Sources */,
 				FA6FC8862C62F1C0003A6726 /* NavigationModifier.swift in Sources */,
 				FAA271B12C61B410005AC21C /* HomeScreenUiState.swift in Sources */,

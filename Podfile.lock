@@ -1,16 +1,22 @@
 PODS:
+  - GRDB.swift (6.24.1):
+    - GRDB.swift/standard (= 6.24.1)
+  - GRDB.swift/standard (6.24.1)
   - Kingfisher (7.11.0)
 
 DEPENDENCIES:
+  - GRDB.swift
   - Kingfisher (~> 7.0)
 
 SPEC REPOS:
   trunk:
+    - GRDB.swift
     - Kingfisher
 
 SPEC CHECKSUMS:
+  GRDB.swift: 136dcb5d8dddca50aae3ba7d77475f79e7232cd8
   Kingfisher: b9c985d864d43515f404f1ef4a8ce7d802ace3ac
 
-PODFILE CHECKSUM: fc6a2d49170145cfb2ca03ea7392a9ce6750c328
+PODFILE CHECKSUM: 2b475bdc08bd1c904fa1fdb9266a1e916ec2b6ef
 
 COCOAPODS: 1.15.2
