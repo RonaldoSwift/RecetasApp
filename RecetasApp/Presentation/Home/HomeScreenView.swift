@@ -14,10 +14,17 @@ struct HomeScreenView: View {
     @EnvironmentObject private var sharedRecetaViewModel : SharedRecetaViewModel
     @StateObject private var homeScreenViewModel = HomeScreenViewModel(
         recetaRepository: RecetaRepository(
-            recetasWebService: RecetasWebService()
+            recetasWebService: RecetasWebService(),
+            dataBaseGRDB: RecetaGRDB()
         )
     )
     
+    @State private var showAlert: Bool = false
+    @State private var showLoading: Bool = false
+    @State private var tituloDeAlerta = ""
+    @State private var mensajeDeAlerta: String = ""
+    @State private var showModal = false
+    @State private var clickEnCorazon = false
     @State private var nombreDeReceta: String = ""
     @State private var arrayDeReceta: [Receta] = []
     @State private var searchText = ""
@@ -32,9 +39,7 @@ struct HomeScreenView: View {
         }
     }
     
-    @State private var showAlert: Bool = false
-    @State private var showLoading: Bool = false
-    @State private var mensajeDeAlerta: String = ""
+    
     
     var body: some View {
         VStack {
@@ -49,6 +54,12 @@ struct HomeScreenView: View {
                                 clickEnLaTarjeta: {
                                     sharedRecetaViewModel.receta = receta
                                     onClickInDetail()
+                                }, clickEnButtonCorazon: {
+                                    homeScreenViewModel.insertarEnBaseDeDatos(
+                                        id: receta.id,
+                                        title: receta.title,
+                                        image: receta.image
+                                    )
                                 },
                                 urlImage: receta.image,
                                 nombreDeComida: receta.title
@@ -63,7 +74,7 @@ struct HomeScreenView: View {
         .navigationTitle(Text("Home"))
         .alert(isPresented: $showAlert) {
             Alert(
-                title: Text("Error"),
+                title: Text(tituloDeAlerta),
                 message: Text(mensajeDeAlerta),
                 dismissButton: .default(
                     Text("Aceptar"),
@@ -72,19 +83,37 @@ struct HomeScreenView: View {
                 )
             )
         }
+        .toolbar {
+            TextHomeToolbarContent(
+                tituloDePantalla: "Favorito") {
+                    showModal = true
+                }
+        }
+        .sheet(isPresented: $showModal) {
+            FavoritoScreenModalView()
+        }
         .onReceive(homeScreenViewModel.$homeScreenUiState, perform: { homeState in
             switch(homeState) {
             case .inicial:
                 break
             case .cargando:
                 showLoading = true
-            case .error(let error):
+            case .errorDeWebService(let error):
+                tituloDeAlerta = "Error de Web Service"
+                mensajeDeAlerta = error
                 showAlert = true
                 showLoading = false
-                mensajeDeAlerta = error
-            case .success(let recetas):
+            case .successDeWebService(let recetas):
                 arrayDeReceta = recetas
                 showLoading = false
+            case .guardadoEnFavoritoDB(let mensajeEnBD):
+                tituloDeAlerta = "Genial!!"
+                mensajeDeAlerta = mensajeEnBD
+                showAlert = true
+            case .errorGuardadoFavoritoDB(let errorEnBD):
+                tituloDeAlerta = "Error"
+                mensajeDeAlerta = errorEnBD
+                showAlert = true
             }
         })
     }

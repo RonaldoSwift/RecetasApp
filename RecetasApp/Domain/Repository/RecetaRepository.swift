@@ -11,11 +11,13 @@ import Combine
 class RecetaRepository {
     
     private let recetasWebService: RecetasWebService
+    private let dataBaseGRDB: RecetaGRDB
     
     var cancelLables = Set<AnyCancellable>()
     
-    init(recetasWebService: RecetasWebService) {
+    init(recetasWebService: RecetasWebService, dataBaseGRDB: RecetaGRDB) {
         self.recetasWebService = recetasWebService
+        self.dataBaseGRDB = dataBaseGRDB
     }
     
     func getRecetaFromWebService(nombreDeReceta:String) -> AnyPublisher<[Receta] ,Error> {
@@ -43,5 +45,35 @@ class RecetaRepository {
             )
         }
         .eraseToAnyPublisher()
+    }
+    
+    func getPublicadorDeRecetaDeBaseDeDatos() ->AnyPublisher<[Receta],Error> {
+        dataBaseGRDB.publicadorGetReceta.map { (recetaEntity: [RecetaEntity]) in
+            recetaEntity.map { (recetaEntity: RecetaEntity) in
+                Receta(
+                    id: recetaEntity.id,
+                    title: recetaEntity.title,
+                    image: recetaEntity.image
+                )
+            }
+        }
+        .eraseToAnyPublisher()
+    }
+    
+    func llamarRecetaDeBaseDeDatos() {
+        dataBaseGRDB.getRecetaFromTable()
+    }
+    
+    func insertarRecetaEnBaseDeDatos(id:Int, title:String, image:String) {
+        dataBaseGRDB.insertarRecetaALaTabla(
+            id: id,
+            title: title,
+            image: image
+        )
+    }
+    
+    func publicadorDeInsertarReceta() ->AnyPublisher<String,Error> {
+        return dataBaseGRDB.publicadorInsertarReceta
+            .eraseToAnyPublisher()
     }
 }

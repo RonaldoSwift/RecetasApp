@@ -14,7 +14,7 @@ struct DetailScreenView: View {
     @StateObject private var detailScreenViewModel = DetailScreenViewModel(
         recetaRepository: RecetaRepository(
             recetasWebService:
-                RecetasWebService()
+                RecetasWebService(), dataBaseGRDB: RecetaGRDB()
         )
     )
     @State private var cookingMinutes: Int = 0
@@ -28,7 +28,6 @@ struct DetailScreenView: View {
     @State private var showModal: Bool = false
     
     var body: some View {
-        
         VStack {
             if showLoading {
                 ProgressView()
@@ -81,7 +80,6 @@ struct DetailScreenView: View {
                 .edgesIgnoringSafeArea(.top)
             }
         }
-        
         .toolbar(content: {
             TextUserToolbarContent(tituloDePantalla: "Detalle", onClick: {
                 showModal = true
