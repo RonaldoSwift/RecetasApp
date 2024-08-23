@@ -15,6 +15,8 @@
 		FA6483E92C619CC0001C4722 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6483E82C619CC0001C4722 /* ErrorResponse.swift */; };
 		FA6483EE2C619E61001C4722 /* RecetaRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6483ED2C619E61001C4722 /* RecetaRepository.swift */; };
 		FA6483F02C619F6B001C4722 /* Receta.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6483EF2C619F6B001C4722 /* Receta.swift */; };
+		FA67F2972C76BE7B00E5D8EB /* FavoritoScreenModalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA67F2962C76BE7B00E5D8EB /* FavoritoScreenModalViewModel.swift */; };
+		FA67F2992C76C1C300E5D8EB /* FavoritoScreenModalViewUiState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA67F2982C76C1C300E5D8EB /* FavoritoScreenModalViewUiState.swift */; };
 		FA6CDF022C6674AE000FB5DA /* SharedRecetaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6CDF012C6674AE000FB5DA /* SharedRecetaViewModel.swift */; };
 		FA6DE1B62C6E63E500AB425D /* PHImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6DE1B52C6E63E500AB425D /* PHImagePickerView.swift */; };
 		FA6E73D42C6275A1000E84EE /* RecetaCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E73D32C6275A1000E84EE /* RecetaCard.swift */; };
@@ -89,6 +91,8 @@
 		FA6483E82C619CC0001C4722 /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
 		FA6483ED2C619E61001C4722 /* RecetaRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecetaRepository.swift; sourceTree = "<group>"; };
 		FA6483EF2C619F6B001C4722 /* Receta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Receta.swift; sourceTree = "<group>"; };
+		FA67F2962C76BE7B00E5D8EB /* FavoritoScreenModalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritoScreenModalViewModel.swift; sourceTree = "<group>"; };
+		FA67F2982C76C1C300E5D8EB /* FavoritoScreenModalViewUiState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritoScreenModalViewUiState.swift; sourceTree = "<group>"; };
 		FA6CDF012C6674AE000FB5DA /* SharedRecetaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedRecetaViewModel.swift; sourceTree = "<group>"; };
 		FA6DE1B52C6E63E500AB425D /* PHImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PHImagePickerView.swift; sourceTree = "<group>"; };
 		FA6E73D32C6275A1000E84EE /* RecetaCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecetaCard.swift; sourceTree = "<group>"; };
@@ -446,6 +450,8 @@
 			isa = PBXGroup;
 			children = (
 				FAAF20F32C764E3700D3DF95 /* FavoritoScreenModalView.swift */,
+				FA67F2962C76BE7B00E5D8EB /* FavoritoScreenModalViewModel.swift */,
+				FA67F2982C76C1C300E5D8EB /* FavoritoScreenModalViewUiState.swift */,
 			);
 			path = FavoritoModal;
 			sourceTree = "<group>";
@@ -740,6 +746,7 @@
 				FA6FC8882C62F209003A6726 /* View+Extension.swift in Sources */,
 				FAA271AF2C61B2EF005AC21C /* HomeScreenViewModel.swift in Sources */,
 				FA7271272C6FAFC600BD72E2 /* TextSaveToolbarContent.swift in Sources */,
+				FA67F2972C76BE7B00E5D8EB /* FavoritoScreenModalViewModel.swift in Sources */,
 				FABCF9CB2C740E020090C951 /* RecetaGRDB.swift in Sources */,
 				FA7EC1592C65340300EF602E /* RoundedCorner.swift in Sources */,
 				FA7EC15D2C653FD400EF602E /* DetalleCard.swift in Sources */,
@@ -757,6 +764,7 @@
 				FA13D81C2C6158C500EE623D /* HomeScreenView.swift in Sources */,
 				FA6CDF022C6674AE000FB5DA /* SharedRecetaViewModel.swift in Sources */,
 				FA73276D2C6A860400AE7A9A /* MapScreenModalView.swift in Sources */,
+				FA67F2992C76C1C300E5D8EB /* FavoritoScreenModalViewUiState.swift in Sources */,
 				FA7327692C6A766000AE7A9A /* MapScreenViewModel.swift in Sources */,
 				FA6483E22C6196A0001C4722 /* RecetasWebService.swift in Sources */,
 				FA6483E72C619853001C4722 /* RecetaResponse.swift in Sources */,

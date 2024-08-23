@@ -41,31 +41,8 @@ class RecetaGRDB {
         }
     }
     
-    func insertarRecetaALaTabla(id: Int, title: String, image: String) {
-        let recetaEntity = RecetaEntity(
-            id: id,
-            title: title,
-            image: image
-        )
-        do {
-            try databaseQueue.write ({ database in
-                try recetaEntity.insert(database)
-                publicadorInsertarReceta.send("Se guardo en Favorito")
-            })
-        } catch let error {
-            publicadorInsertarReceta.send(completion: .failure(error))
-        }
-    }
-    
-    func getRecetaFromTable() {
-        let recetasEntity: [RecetaEntity] = try! databaseQueue.read({ database in
-            try RecetaEntity.fetchAll(database)
-        })
-        publicadorGetReceta.send(recetasEntity)
-    }
-    
     //USANDO QUERY
-    func getRecetaFromTable2() {
+    func getRecetaFromTable2(onGetRecetas: ([RecetaEntity]) -> Void) {
         var recetasEntity:[RecetaEntity] = []
         do {
             try databaseQueue.read({ (database:Database) in
@@ -78,7 +55,8 @@ class RecetaGRDB {
                     )
                 }
             })
-            publicadorGetReceta.send(recetasEntity)
+            //publicadorGetReceta.send(recetasEntity)
+            onGetRecetas(recetasEntity)
         } catch let error {
             publicadorGetReceta.send(completion: .failure(error))
         }
