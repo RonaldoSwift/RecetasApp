@@ -9,11 +9,14 @@ import Foundation
 import Combine
 
 class RecetasWebService {
-     //Llamar desde otro lugar info.plist por ejemplo
-    private let API_KEY: String = "e6ec9aa5f9b341ea84907fea9f2fb53c"
+
+    // TODO: FALTA ENVIAR API_KEY POR CABECERA
     
     func getReceta(nombreDeReceta:String) -> AnyPublisher<RecetaResponse,Error> {
-        guard let urlComponents = URLComponents(string: "https://api.spoonacular.com/recipes/complexSearch?apiKey=\(API_KEY)&query=\(nombreDeReceta)") else {
+        let server_url = Bundle.main.object(forInfoDictionaryKey: "SERVER_URL") as! String
+        let api_key = Bundle.main.object(forInfoDictionaryKey: "API_KEY") as! String
+        
+        guard let urlComponents = URLComponents(string: "\(server_url)/recipes/complexSearch?apiKey=\(api_key)&query=\(nombreDeReceta)") else {
             return Fail(error: RecetasAppError.errorURL)
                 .eraseToAnyPublisher()
         }
@@ -51,7 +54,10 @@ class RecetasWebService {
     }
     
     func getDetalleReceta(id: Int) -> AnyPublisher<DetalleResponse,Error> {
-        guard let urlComponents = URLComponents(string: "https://api.spoonacular.com/recipes/\(id)/information?apiKey=\(API_KEY)") else {
+        let server_url = Bundle.main.object(forInfoDictionaryKey: "SERVER_URL") as! String
+        let api_key = Bundle.main.object(forInfoDictionaryKey: "API_KEY") as! String
+        
+        guard let urlComponents = URLComponents(string: "\(server_url)/recipes/\(id)/information?apiKey=\(api_key)") else {
             return Fail(error: RecetasAppError.errorURL)
                 .eraseToAnyPublisher()
         }
@@ -88,7 +94,10 @@ class RecetasWebService {
     }
     
     func getRestaurantes() -> AnyPublisher<RestauranteSearchResponse ,Error> {
-        guard let urlComponents = URLComponents(string: "http://192.168.1.39:3000/food/restaurants/search") else {
+        let server_url = Bundle.main.object(forInfoDictionaryKey: "SERVER_URL") as! String
+        let api_key = Bundle.main.object(forInfoDictionaryKey: "API_KEY") as! String
+        
+        guard let urlComponents = URLComponents(string: "\(server_url)/food/restaurants/search") else {
             return Fail(error: RecetasAppError.errorURL)
                 .eraseToAnyPublisher()
         }
