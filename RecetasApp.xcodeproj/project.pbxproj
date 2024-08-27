@@ -77,6 +77,8 @@
 
 /* Begin PBXFileReference section */
 		1A4F23B9376CB4DF352EDD5C /* Pods-RecetasAppTests.debug(dev).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecetasAppTests.debug(dev).xcconfig"; path = "Target Support Files/Pods-RecetasAppTests/Pods-RecetasAppTests.debug(dev).xcconfig"; sourceTree = "<group>"; };
+		248EBF7E2C7D700D00A9B5AB /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		248EBF802C7D789E00A9B5AB /* Spoonacular.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Spoonacular.json; sourceTree = "<group>"; };
 		24B7A3D32C7C00C900EBD207 /* Dev.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Dev.xcconfig; sourceTree = "<group>"; };
 		24B7A3D42C7C00DC00EBD207 /* Prod.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Prod.xcconfig; sourceTree = "<group>"; };
 		24B7A3D52C7C01C900EBD207 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -190,6 +192,14 @@
 				CC508BCC4AEB51AC5FDC6544 /* Pods-RecetasAppTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		248EBF7F2C7D771700A9B5AB /* Mockoon */ = {
+			isa = PBXGroup;
+			children = (
+				248EBF802C7D789E00A9B5AB /* Spoonacular.json */,
+			);
+			path = Mockoon;
 			sourceTree = "<group>";
 		};
 		24B7A3D22C7C007000EBD207 /* SchemeConfigurations */ = {
@@ -411,6 +421,8 @@
 		FA7D5BDC2C5EA05A00D20E45 = {
 			isa = PBXGroup;
 			children = (
+				248EBF7F2C7D771700A9B5AB /* Mockoon */,
+				248EBF7E2C7D700D00A9B5AB /* README.md */,
 				FA7D5BE72C5EA05A00D20E45 /* RecetasApp */,
 				FA7D5BF82C5EA05C00D20E45 /* RecetasAppTests */,
 				FA7D5C022C5EA05C00D20E45 /* RecetasAppUITests */,
