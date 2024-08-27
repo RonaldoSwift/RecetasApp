@@ -13,7 +13,7 @@ var databaseQueue: DatabaseQueue!
 class RecetaGRDB {
     
     let publicadorInsertarReceta = PassthroughSubject<String, Error>()
-    let publicadorGetReceta = PassthroughSubject<[RecetaEntity], Error>()
+    let publicadorListaDeRecetas = PassthroughSubject<[RecetaEntity], Error>()
     
     //Creamos la base de datos
     
@@ -42,10 +42,10 @@ class RecetaGRDB {
     }
     
     //USANDO QUERY
-    func getRecetaFromTable2(onGetRecetas: ([RecetaEntity]) -> Void) {
+    func getRecetaFromTabla() {
         var recetasEntity:[RecetaEntity] = []
         do {
-            try databaseQueue.read({ (database:Database) in
+            try databaseQueue.read({ (database: Database) in
                 let rows = try Row.fetchAll(database, sql: "SELECT id, title, image FROM RecetaEntity")
                 recetasEntity = rows.map { (row: Row) in
                     RecetaEntity(
@@ -55,17 +55,16 @@ class RecetaGRDB {
                     )
                 }
             })
-            //publicadorGetReceta.send(recetasEntity)
-            onGetRecetas(recetasEntity)
+            publicadorListaDeRecetas.send(recetasEntity)
         } catch let error {
-            publicadorGetReceta.send(completion: .failure(error))
+            publicadorListaDeRecetas.send(completion: .failure(error))
         }
     }
     
     //USANDO QUERY
-    func insertarRecetaALaTabla2(id: Int, title: String, image: String) {
+    func insertarRecetaALaTabla(id: Int, title: String, image: String) {
         do {
-            try databaseQueue.write { (dataBase:Database) in
+            try databaseQueue.write { (dataBase: Database) in
                 try dataBase.execute(sql: "INSERT INTO RecetaEntity (id, title, image) VALUES (?, ?, ?)", arguments: [id, title, image])
                 publicadorInsertarReceta.send("Se inserto Correctamente")
             }

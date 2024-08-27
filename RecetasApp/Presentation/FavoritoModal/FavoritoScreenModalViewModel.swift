@@ -21,15 +21,11 @@ final class FavoritoScreenModalViewModel: ObservableObject {
         
     init(recetaRepository: RecetaRepository) {
         self.recetaRepository = recetaRepository
-        //llamarRecetaDeBaseDeDatos()
-        //observarPublicadorDeListaDeRecetas()
+        observarPublicadorDeListaDeRecetas()
+        recetaRepository.llamarListaDeRecetas()
     }
     
-    /*func llamarRecetaDeBaseDeDatos() {
-        recetaRepository.llamarRecetaDeBaseDeDatos()
-    }*/
-    
-    /*func observarPublicadorDeListaDeRecetas() {
+    func observarPublicadorDeListaDeRecetas() {
         recetaRepository.publicadorDeListaDeRecetas()
             .subscribe(on: DispatchQueue.global(qos: .background))
             .receive(on: DispatchQueue.main)
@@ -45,11 +41,5 @@ final class FavoritoScreenModalViewModel: ObservableObject {
                 self.favoritoScreenModalViewUiState = FavoritoScreenModalViewUiState.success(recetas)
             })
             .store(in: &cancelLables)
-    }*/
-    
-    func observarPublicadorDeListaDeRecetas() {
-        recetaRepository.llamarRecetaDeBaseDeDatos { (recetas:[Receta]) in
-            self.favoritoScreenModalViewUiState = FavoritoScreenModalViewUiState.success(recetas)
-        }
     }
 }

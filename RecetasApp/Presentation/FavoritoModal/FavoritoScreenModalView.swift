@@ -64,10 +64,6 @@ struct FavoritoScreenModalView: View {
                     )
                 )
             }
-            .onAppear(perform: {
-                //favoritoScreenModalViewModel.llamarRecetaDeBaseDeDatos()
-                favoritoScreenModalViewModel.observarPublicadorDeListaDeRecetas()
-            })
             .onReceive(favoritoScreenModalViewModel.$favoritoScreenModalViewUiState, perform: { favoriteState in
                 switch(favoriteState) {
                 case .incial:

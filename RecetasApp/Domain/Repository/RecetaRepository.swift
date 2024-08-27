@@ -47,47 +47,26 @@ class RecetaRepository {
         .eraseToAnyPublisher()
     }
     
-    func getPublicadorDeRecetaDeBaseDeDatos() ->AnyPublisher<[Receta],Error> {
-        dataBaseGRDB.publicadorGetReceta.map { (recetaEntity: [RecetaEntity]) in
-            recetaEntity.map { (recetaEntity: RecetaEntity) in
-                Receta(
-                    id: recetaEntity.id,
-                    title: recetaEntity.title,
-                    image: recetaEntity.image
-                )
-            }
-        }
-        .eraseToAnyPublisher()
-    }
     
     func insertarRecetaEnBaseDeDatos(id:Int, title:String, image:String) {
-        dataBaseGRDB.insertarRecetaALaTabla2(
+        dataBaseGRDB.insertarRecetaALaTabla(
             id: id,
             title: title,
             image: image
         )
     }
     
-    func publicadorDeInsertarReceta() ->AnyPublisher<String,Error> {
+    func publicadorDeInsertarReceta() -> AnyPublisher<String, Error> {
         return dataBaseGRDB.publicadorInsertarReceta
             .eraseToAnyPublisher()
     }
     
-    func llamarRecetaDeBaseDeDatos(onGetReceta: ([Receta]) -> Void) {
-        dataBaseGRDB.getRecetaFromTable2(onGetRecetas: { recetaEntitys in
-           let recetas = recetaEntitys.map { (recetaEntity:RecetaEntity) in
-                Receta(
-                    id: recetaEntity.id,
-                    title: recetaEntity.title,
-                    image: recetaEntity.image
-                )
-            }
-            onGetReceta(recetas)
-        })
+    func llamarListaDeRecetas() {
+        dataBaseGRDB.getRecetaFromTabla()
     }
     
-    func publicadorDeListaDeRecetas() ->AnyPublisher<[Receta],Error> {
-        return dataBaseGRDB.publicadorGetReceta.map { (recetaEntitys:[RecetaEntity]) in
+    func publicadorDeListaDeRecetas() ->AnyPublisher<[Receta], Error> {
+        return dataBaseGRDB.publicadorListaDeRecetas.map { (recetaEntitys:[RecetaEntity]) in
             recetaEntitys.map { (recetaEntity:RecetaEntity) in
                 Receta(
                     id: recetaEntity.id,
