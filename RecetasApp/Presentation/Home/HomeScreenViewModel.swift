@@ -19,11 +19,11 @@ final class HomeScreenViewModel: ObservableObject {
     
     init(recetaRepository: RecetaRepository) {
         self.recetaRepository = recetaRepository
-        startReceta(nombreDeReceta: "")
+        llamarServicioListaDeRecetas(nombreDeReceta: "")
         observarPublicadorDeInsertarReceta()
     }
     
-    func startReceta(nombreDeReceta: String) {
+    func llamarServicioListaDeRecetas(nombreDeReceta: String) {
         
         homeScreenUiState = HomeScreenUiState.cargando
         
@@ -50,10 +50,6 @@ final class HomeScreenViewModel: ObservableObject {
             title: title,
             image: image
         )
-    }
-    
-    func llamarRecetaDeBaseDeDatos() {
-        recetaRepository.llamarRecetaDeBaseDeDatos()
     }
     
     func observarPublicadorDeInsertarReceta() {

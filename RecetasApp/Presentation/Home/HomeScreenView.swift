@@ -39,8 +39,6 @@ struct HomeScreenView: View {
         }
     }
     
-    
-    
     var body: some View {
         VStack {
             if showLoading {

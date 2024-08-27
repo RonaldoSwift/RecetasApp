@@ -1,0 +1,125 @@
+{
+  "uuid": "2517ddea-18e5-4e5b-b40d-ad272ff1a143",
+  "lastMigration": 32,
+  "name": "Spoonacular",
+  "endpointPrefix": "",
+  "latency": 0,
+  "port": 3004,
+  "hostname": "",
+  "folders": [],
+  "routes": [
+    {
+      "uuid": "7280ab63-dfcf-435e-be95-407bcded7bab",
+      "type": "http",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "recipes/complexSearch",
+      "responses": [
+        {
+          "uuid": "50f455a7-da61-4928-8b85-6c2406f3ee6b",
+          "body": "{\n    \"results\": [\n        {\n            \"id\": 715415,\n            \"title\": \"Red Lentil Soup with Chicken and Turnips\",\n            \"image\": \"https://img.spoonacular.com/recipes/715415-312x231.jpg\",\n            \"imageType\": \"jpg\"\n        },\n        {\n            \"id\": 716406,\n            \"title\": \"Asparagus and Pea Soup: Real Convenience Food\",\n            \"image\": \"https://img.spoonacular.com/recipes/716406-312x231.jpg\",\n            \"imageType\": \"jpg\"\n        },\n        {\n            \"id\": 644387,\n            \"title\": \"Garlicky Kale\",\n            \"image\": \"https://img.spoonacular.com/recipes/644387-312x231.jpg\",\n            \"imageType\": \"jpg\"\n        },\n        {\n            \"id\": 715446,\n            \"title\": \"Slow Cooker Beef Stew\",\n            \"image\": \"https://img.spoonacular.com/recipes/715446-312x231.jpg\",\n            \"imageType\": \"jpg\"\n        }\n    ],\n    \"offset\": 0,\n    \"number\": 10,\n    \"totalResults\": 5233\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": null
+    },
+    {
+      "uuid": "0bda3448-4890-4469-aac4-feac14366409",
+      "type": "http",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "recipes/:id/information",
+      "responses": [
+        {
+          "uuid": "72eba243-8966-4367-8140-8f276973a097",
+          "body": "{\n    \"vegetarian\": true,\n    \"vegan\": true,\n    \"glutenFree\": true,\n    \"dairyFree\": true,\n    \"veryHealthy\": true,\n    \"cheap\": false,\n    \"veryPopular\": false,\n    \"sustainable\": false,\n    \"lowFodmap\": false,\n    \"weightWatcherSmartPoints\": 9,\n    \"gaps\": \"no\",\n    \"preparationMinutes\": null,\n    \"cookingMinutes\": null,\n    \"aggregateLikes\": 53,\n    \"healthScore\": 96,\n    \"creditsText\": \"foodandspice.com\",\n    \"sourceName\": \"foodandspice.com\",\n    \"pricePerServing\": 168.43,\n    \"extendedIngredients\": [\n        {\n            \"id\": 20041,\n            \"aisle\": \"Pasta and Rice\",\n            \"image\": \"rice-brown-cooked.png\",\n            \"consistency\": \"SOLID\",\n            \"name\": \"brown rice\",\n            \"nameClean\": \"cooked brown rice\",\n            \"original\": \"2/3 cup dried brown rice (2 cups cooked)\",\n            \"originalName\": \"2/3 cup dried brown rice cooked)\",\n            \"amount\": 2.0,\n            \"unit\": \"cups\",\n            \"meta\": [\n                \"dried\",\n                \"cooked\"\n            ],\n            \"measures\": {\n                \"us\": {\n                    \"amount\": 2.0,\n                    \"unitShort\": \"cups\",\n                    \"unitLong\": \"cups\"\n                },\n                \"metric\": {\n                    \"amount\": 390.0,\n                    \"unitShort\": \"g\",\n                    \"unitLong\": \"grams\"\n                }\n            }\n        },\n        {\n            \"id\": 11124,\n            \"aisle\": \"Produce\",\n            \"image\": \"sliced-carrot.png\",\n            \"consistency\": \"SOLID\",\n            \"name\": \"carrots\",\n            \"nameClean\": \"carrot\",\n            \"original\": \"2 medium carrots, sliced\",\n            \"originalName\": \"carrots, sliced\",\n            \"amount\": 2.0,\n            \"unit\": \"medium\",\n            \"meta\": [\n                \"sliced\"\n            ],\n            \"measures\": {\n                \"us\": {\n                    \"amount\": 2.0,\n                    \"unitShort\": \"medium\",\n                    \"unitLong\": \"mediums\"\n                },\n                \"metric\": {\n                    \"amount\": 2.0,\n                    \"unitShort\": \"medium\",\n                    \"unitLong\": \"mediums\"\n                }\n            }\n        },\n        {\n            \"id\": 11143,\n            \"aisle\": \"Produce\",\n            \"image\": \"celery.jpg\",\n            \"consistency\": \"SOLID\",\n            \"name\": \"celery\",\n            \"nameClean\": \"celery\",\n            \"original\": \"2 stalks celery, sliced\",\n            \"originalName\": \"celery, sliced\",\n            \"amount\": 2.0,\n            \"unit\": \"stalks\",\n            \"meta\": [\n                \"sliced\"\n            ],\n            \"measures\": {\n                \"us\": {\n                    \"amount\": 2.0,\n                    \"unitShort\": \"stalks\",\n                    \"unitLong\": \"stalks\"\n                },\n                \"metric\": {\n                    \"amount\": 2.0,\n                    \"unitShort\": \"stalks\",\n                    \"unitLong\": \"stalks\"\n                }\n            }\n        }\n    ],\n    \"id\": 782601,\n    \"title\": \"Red Kidney Bean Jambalaya\",\n    \"readyInMinutes\": 45,\n    \"servings\": 6,\n    \"sourceUrl\": \"https://www.foodandspice.com/2016/05/red-kidney-bean-jambalaya.html\",\n    \"image\": \"https://img.spoonacular.com/recipes/782601-556x370.jpg\",\n    \"imageType\": \"jpg\",\n    \"summary\": \"Red Kidney Bean Jambalayan is a main course that serves 6. One portion of this dish contains approximately <b>18g of protein</b>, <b>6g of fat</b>, and a total of <b>393 calories</b>. For <b>$1.68 per serving</b>, this recipe <b>covers 33%</b> of your daily requirements of vitamins and minerals. 53 people were glad they tried this recipe. A mixture of vegetable stock, tomatoes, onion, and a handful of other ingredients are all it takes to make this recipe so flavorful. It is a good option if you're following a <b>gluten free, dairy free, lacto ovo vegetarian, and vegan</b> diet. This recipe is typical of Cajun cuisine. It is brought to you by foodandspice.blogspot.com. From preparation to the plate, this recipe takes roughly <b>45 minutes</b>. Overall, this recipe earns a <b>tremendous spoonacular score of 99%</b>. Users who liked this recipe also liked <a href=\\\"https://spoonacular.com/recipes/red-kidney-bean-jambalaya-1407231\\\">Red Kidney Bean Jambalaya</a>, <a href=\\\"https://spoonacular.com/recipes/red-kidney-bean-salad-94525\\\">Red Kidney Bean Salad</a>, and <a href=\\\"https://spoonacular.com/recipes/red-kidney-bean-curry-80686\\\">Red Kidney Bean Curry</a>.\",\n    \"cuisines\": [\n        \"Cajun\",\n        \"Creole\"\n    ],\n    \"dishTypes\": [\n        \"lunch\",\n        \"main course\",\n        \"main dish\",\n        \"dinner\"\n    ],\n    \"diets\": [\n        \"gluten free\",\n        \"dairy free\",\n        \"lacto ovo vegetarian\",\n        \"vegan\"\n    ],\n    \"occasions\": [],\n    \"instructions\": \"Rinse the kidney beans and brown rice separately. Cover the kidney beans with water and soak for 8 hours or overnight. In a separate bowl, cover the brown rice with water and soak for 8 hours or overnight.Drain and rinse the kidney beans, then transfer to a medium saucepan and cover with fresh water. Bring to a boil, reduce heat to medium-low, cover, and simmer for 1 hour or until just tender but not falling apart. Drain and set aside.Heat the oil in a large saucepan over medium heat. When hot, add the onion and saut for 5 minutes. Now add the garlic, carrots, celery and green beans, and stir for another 5 minutes. Next add the tomatoes, red pepper, eggplant, sage, thyme, marjoram and celery seed, and continue to stir for another few minutes.Pour in the vegetable stock, liquid smoke, rice and the cooked kidney beans. Bring to a boil, reduce heat to medium low, cover, and cook, stirring occasionally, for 45 minutes or until the rice is tender. Add water as necessary if the stew becomes too dry.Season with sriracha, salt and pepper, and taste for seasoning  add more liquid smoke, sriracha, salt, pepper or herbs as desired.\",\n    \"analyzedInstructions\": [\n        {\n            \"name\": \"\",\n            \"steps\": [\n                {\n                    \"number\": 1,\n                    \"step\": \"Rinse the kidney beans and brown rice separately. Cover the kidney beans with water and soak for 8 hours or overnight. In a separate bowl, cover the brown rice with water and soak for 8 hours or overnight.\",\n                    \"ingredients\": [\n                        {\n                            \"id\": 16033,\n                            \"name\": \"kidney beans\",\n                            \"localizedName\": \"kidney beans\",\n                            \"image\": \"kidney-beans.jpg\"\n                        },\n                        {\n                            \"id\": 20040,\n                            \"name\": \"brown rice\",\n                            \"localizedName\": \"brown rice\",\n                            \"image\": \"uncooked-brown-rice.png\"\n                        },\n                        {\n                            \"id\": 14412,\n                            \"name\": \"water\",\n                            \"localizedName\": \"water\",\n                            \"image\": \"water.png\"\n                        }\n                    ],\n                    \"equipment\": [\n                        {\n                            \"id\": 404783,\n                            \"name\": \"bowl\",\n                            \"localizedName\": \"bowl\",\n                            \"image\": \"https://spoonacular.com/cdn/equipment_100x100/bowl.jpg\"\n                        }\n                    ],\n                    \"length\": {\n                        \"number\": 960,\n                        \"unit\": \"minutes\"\n                    }\n                },\n                {\n                    \"number\": 2,\n                    \"step\": \"Drain and rinse the kidney beans, then transfer to a medium saucepan and cover with fresh water. Bring to a boil, reduce heat to medium-low, cover, and simmer for 1 hour or until just tender but not falling apart.\",\n                    \"ingredients\": [\n                        {\n                            \"id\": 16033,\n                            \"name\": \"kidney beans\",\n                            \"localizedName\": \"kidney beans\",\n                            \"image\": \"kidney-beans.jpg\"\n                        },\n                        {\n                            \"id\": 14412,\n                            \"name\": \"water\",\n                            \"localizedName\": \"water\",\n                            \"image\": \"water.png\"\n                        }\n                    ],\n                    \"equipment\": [\n                        {\n                            \"id\": 404669,\n                            \"name\": \"sauce pan\",\n                            \"localizedName\": \"sauce pan\",\n                            \"image\": \"https://spoonacular.com/cdn/equipment_100x100/sauce-pan.jpg\"\n                        }\n                    ],\n                    \"length\": {\n                        \"number\": 60,\n                        \"unit\": \"minutes\"\n                    }\n                },\n                {\n                    \"number\": 3,\n                    \"step\": \"Drain and set aside.\",\n                    \"ingredients\": [],\n                    \"equipment\": []\n                }\n            ]\n        }\n    ],\n    \"originalId\": null,\n    \"spoonacularScore\": 98.80960845947266,\n    \"spoonacularSourceUrl\": \"https://spoonacular.com/red-kidney-bean-jambalaya-782601\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": null
+    }
+  ],
+  "rootChildren": [
+    {
+      "type": "route",
+      "uuid": "7280ab63-dfcf-435e-be95-407bcded7bab"
+    },
+    {
+      "type": "route",
+      "uuid": "0bda3448-4890-4469-aac4-feac14366409"
+    }
+  ],
+  "proxyMode": false,
+  "proxyHost": "",
+  "proxyRemovePrefix": false,
+  "tlsOptions": {
+    "enabled": false,
+    "type": "CERT",
+    "pfxPath": "",
+    "certPath": "",
+    "keyPath": "",
+    "caPath": "",
+    "passphrase": ""
+  },
+  "cors": true,
+  "headers": [
+    {
+      "key": "Content-Type",
+      "value": "application/json"
+    },
+    {
+      "key": "Access-Control-Allow-Origin",
+      "value": "*"
+    },
+    {
+      "key": "Access-Control-Allow-Methods",
+      "value": "GET,POST,PUT,PATCH,DELETE,HEAD,OPTIONS"
+    },
+    {
+      "key": "Access-Control-Allow-Headers",
+      "value": "Content-Type, Origin, Accept, Authorization, Content-Length, X-Requested-With"
+    }
+  ],
+  "proxyReqHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "proxyResHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "data": [],
+  "callbacks": []
+}

@@ -47,22 +47,6 @@ class RecetaRepository {
         .eraseToAnyPublisher()
     }
     
-    func getPublicadorDeRecetaDeBaseDeDatos() ->AnyPublisher<[Receta],Error> {
-        dataBaseGRDB.publicadorGetReceta.map { (recetaEntity: [RecetaEntity]) in
-            recetaEntity.map { (recetaEntity: RecetaEntity) in
-                Receta(
-                    id: recetaEntity.id,
-                    title: recetaEntity.title,
-                    image: recetaEntity.image
-                )
-            }
-        }
-        .eraseToAnyPublisher()
-    }
-    
-    func llamarRecetaDeBaseDeDatos() {
-        dataBaseGRDB.getRecetaFromTable()
-    }
     
     func insertarRecetaEnBaseDeDatos(id:Int, title:String, image:String) {
         dataBaseGRDB.insertarRecetaALaTabla(
@@ -72,8 +56,25 @@ class RecetaRepository {
         )
     }
     
-    func publicadorDeInsertarReceta() ->AnyPublisher<String,Error> {
+    func publicadorDeInsertarReceta() -> AnyPublisher<String, Error> {
         return dataBaseGRDB.publicadorInsertarReceta
             .eraseToAnyPublisher()
+    }
+    
+    func llamarListaDeRecetas() {
+        dataBaseGRDB.getRecetaFromTabla()
+    }
+    
+    func publicadorDeListaDeRecetas() ->AnyPublisher<[Receta], Error> {
+        return dataBaseGRDB.publicadorListaDeRecetas.map { (recetaEntitys:[RecetaEntity]) in
+            recetaEntitys.map { (recetaEntity:RecetaEntity) in
+                Receta(
+                    id: recetaEntity.id,
+                    title: recetaEntity.title,
+                    image: recetaEntity.image
+                )
+            }
+        }
+        .eraseToAnyPublisher()
     }
 }
