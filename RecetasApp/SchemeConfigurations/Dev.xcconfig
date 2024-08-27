@@ -9,6 +9,6 @@
 // https://help.apple.com/xcode/#/dev745c5c974
 
 // User $() to avoid the // from being considerd as a comment
-SERVER_URL = http:/$()/192.168.0.102:3004
+SERVER_URL = http:/$()/192.168.1.39:3004
 API_KEY = e6ec9aa5f9b341ea84907fea9f2fb53c
 

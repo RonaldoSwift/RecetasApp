@@ -21,8 +21,8 @@ final class FavoritoScreenModalViewModel: ObservableObject {
         
     init(recetaRepository: RecetaRepository) {
         self.recetaRepository = recetaRepository
-        observarPublicadorDeListaDeRecetas()
-        recetaRepository.llamarListaDeRecetas()
+        observarPublicadorDeListaDeRecetas() //Primero observamos
+        recetaRepository.llamarListaDeRecetas() // Luego enviamos un valor
     }
     
     func observarPublicadorDeListaDeRecetas() {
